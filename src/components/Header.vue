@@ -58,7 +58,11 @@ export default {
       this.handleScroll(this.number);
     },
     handleScroll(number1) {
-      this.letsScroll = number1 >= 1
+      if (number1 >= 1) {
+        this.letsScroll = true
+      } else if (number1 <= 1) {
+        this.letsScroll = false
+      }
     }
   }
 }
