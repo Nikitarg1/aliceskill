@@ -60,7 +60,7 @@ export default {
     handleScroll(number1) {
       if (number1 >= 1) {
         this.letsScroll = true
-      } else if (number1 <= 100) {
+      } else if (number1 <= 1) {
         this.letsScroll = false
       }
     }
