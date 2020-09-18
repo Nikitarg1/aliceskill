@@ -22,5 +22,7 @@ export default {
 </script>
 
 <style>
-
+.v-application {
+  color: #4a5568;
+}
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <v-content>
+  <div class="">
     <Glavnaya/>
     <v-container style="height: 1500px;" class="bg-green-400"></v-container>
-  </v-content>
+  </div>
 </template>
 
 <script>
