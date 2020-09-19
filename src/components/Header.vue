@@ -2,9 +2,9 @@
   <div class="">
     <v-navigation-drawer
         app
+        right
         fixed
         v-model="drawer"
-        right
         disable-resize-watcher
         width="225"
         :color="background"
@@ -16,7 +16,7 @@
         </v-list-item>
       </template>
 
-      <v-divider dark></v-divider>
+      <v-divider></v-divider>
 
       <v-list
           nav
