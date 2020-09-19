@@ -79,24 +79,25 @@ export default {
   left: 0;
   right: 0;
   bottom: calc(100vh - 68px);
+  backdrop-filter: blur(10px);
   transition: backdrop-filter .20s cubic-bezier(.4, 0, .2, 1), box-shadow .20s cubic-bezier(.4, 0, .2, 1), max-width .25s cubic-bezier(.4, 0, .2, 1), width .25s cubic-bezier(.4, 0, .2, 1);
+}
+
+.isScroll {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+
 }
 
 .fixed {
   z-index: 100;
 }
 
-.isScroll {
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
-  backdrop-filter: blur(10px);
-}
-
 .splashNav {
   /*position: relative;*/
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  /*display: flex;*/
+  /*justify-content: flex-start;*/
+  /*align-items: center;*/
 }
 
 header {
