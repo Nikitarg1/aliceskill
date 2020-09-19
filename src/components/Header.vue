@@ -68,7 +68,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .header__color__blue {
   background-color: rgba(80, 225, 216, .7);
@@ -97,7 +97,7 @@ export default {
 }
 
 .splashNav {
-  position: relative;
+  /*position: relative;*/
   width: 100%;
   display: flex;
   justify-content: flex-start;

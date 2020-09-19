@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import vuetify from './plugins/vuetify';
 import './assets/css/tailwind.css'
 import 'animate.css/animate.compat.css'
+import vuetify from '@/plugins/vuetify'
 
 
 Vue.config.productionTip = false
