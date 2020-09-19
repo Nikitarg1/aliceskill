@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <v-navigation-drawer
         app
         right
@@ -7,8 +7,7 @@
         v-model="drawer"
         disable-resize-watcher
         width="225"
-        :color="background"
-        class="blur"
+        color="gray"
     >
       <template v-slot:prepend>
         <v-list-item class="py-4">
