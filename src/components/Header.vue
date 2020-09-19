@@ -7,7 +7,8 @@
         v-model="drawer"
         disable-resize-watcher
         width="225"
-        color="gray"
+        :color="background"
+        class="blur"
     >
       <template v-slot:prepend>
         <v-list-item class="py-4">
@@ -114,6 +115,11 @@ export default {
 </script>
 
 <style scoped>
+
+.v-navigation-drawer {
+  left: auto;
+}
+
 .blur {
   backdrop-filter: blur(10px);
 }
