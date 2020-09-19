@@ -12,7 +12,7 @@
     >
       <template v-slot:prepend>
         <v-list-item class="py-4">
-          <img src="../assets/img/glavnaya/logo.png" alt="">
+          <img src="../assets/img/glavnaya/logo.png" alt="Rubble logo">
         </v-list-item>
       </template>
 
@@ -115,10 +115,6 @@ export default {
 </script>
 
 <style scoped>
-
-.v-navigation-drawer {
-  left: auto;
-}
 
 .blur {
   backdrop-filter: blur(10px);
