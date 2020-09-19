@@ -19,8 +19,6 @@ export default {
   mounted() {
     new WOW.WOW().init()
   },
-  data: () => ({}),
-
 };
 </script>
 
@@ -30,6 +28,6 @@ export default {
 }
 
 .v-navigation-drawer {
-  /*left: 0;*/
+  left: auto;
 }
 </style>
