@@ -1,6 +1,6 @@
 <template>
   <div class="container--fluid jarallax pa-md-16" style="height: 80vh">
-    <img class="jarallax-img" src="../../../assets/img/Glavnaya/bg-header11.png" alt="">
+    <img class="jarallax-img" src="../../../assets/img/glavnaya/bg-header11.png" alt="">
     <div class="container" style="padding-top: 64px">
       <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-16 text-gray-700">
         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 font-medium leading-tight">Мы стираем границы!</h1>

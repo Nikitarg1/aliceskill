@@ -1,5 +1,12 @@
 <template>
   <div class="">
+    <!--    <Header color="brightBlue"/>-->
+
+    <!--    <v-navigation-drawer app>-->
+    <!--      <navigationDrawer/>-->
+    <!--    </v-navigation-drawer>-->
+
+
     <Header color="brightBlue"/>
     <parallaxx/>
     <section class="py-24 ">
@@ -24,7 +31,7 @@
           С помощью нее используя голосовые команды можно всегда узнавать актуальную информацию по постройке жилья. А
           также в будущем даже управлять своим аккаунтом.
         </p>
-        <img src="../../../assets/img/Glavnaya/colonra.png" alt="Alice mock" class="mt-14 wow fadeInUp"
+        <img src="../../../assets/img/glavnaya/colonra.png" alt="Alice mock" class="mt-14 wow fadeInUp"
              data-wow-offset="100">
       </div>
     </section>
@@ -39,7 +46,7 @@ export default {
   name: "Glavnaya",
   components: {
     Parallaxx,
-    Header
+    Header,
   },
 }
 </script>

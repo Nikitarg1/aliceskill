@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <Maincontent/>
+    <v-footer app>
+
+    </v-footer>
   </v-app>
 </template>
 
