@@ -1,26 +1,52 @@
 <template>
-  <div class="splashNav fixed">
-    <div class="headerSize"
-         :class="[letsScroll ? 'isScroll' : '', background]"
-    ></div>
-    <header class="container">
-      <a href="" class="logo" style="color: #4a5568">Rubble</a>
-      <v-btn @click="togglerMenu = !togglerMenu" class="togglerMenu hidden-md-and-up"
-             :class="{ 'activeMenu' : togglerMenu }"
-             icon
-             x-large>
-        <v-icon>{{ togglerMenu ? 'mdi-close' : 'mdi-menu' }}</v-icon>
-      </v-btn>
-      <ul class="navigation pl-0"
-          :class="[togglerMenu ? 'activeMenu' : '', togglerMenu ? background : '']"
-      >
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Этапы</a></li>
-        <li><a href="#">Технологии</a></li>
-        <li><a href="#">Покупатели</a></li>
-      </ul>
-    </header>
-  </div>
+  <v-app-bar
+      fixed
+      elevate-on-scroll
+      class="splashNav"
+      color="rgba(80, 225, 216, .7)"
+      :class="{ 'isScroll' : letsScroll }"
+  >
+
+    <v-toolbar-title class="logo pl-16">Rubble</v-toolbar-title>
+
+    <v-spacer></v-spacer>
+
+    <v-app-bar-nav-icon
+        x-large
+        @click="togglerMenu = !togglerMenu"
+        class="hidden-md-and-up z-10"
+        :class="{ 'activeMenu' : togglerMenu }"
+    >
+      <v-icon>{{ togglerMenu ? 'mdi-close' : 'mdi-menu' }}</v-icon>
+    </v-app-bar-nav-icon>
+
+    <ul class="navigation pl-0"
+        :class="[togglerMenu ? 'activeMenu' : '', togglerMenu ? background : '']"
+    >
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Этапы</a></li>
+      <li><a href="#">Технологии</a></li>
+      <li><a href="#">Покупатели</a></li>
+    </ul>
+
+
+    <!--<v-btn @click="togglerMenu = !togglerMenu" class=" hidden-md-and-up"-->
+    <!--       :class="{ 'activeMenu' : togglerMenu }"-->
+    <!--       icon-->
+    <!--       x-large>-->
+
+    <!--</v-btn>-->
+
+
+    <!--    <div class="" >-->
+    <!--      &lt;!&ndash;    <div class="headerSize"&ndash;&gt;-->
+    <!--      &lt;!&ndash;         &ndash;&gt;-->
+    <!--      &lt;!&ndash;    ></div>&ndash;&gt;-->
+    <!--      <header class="container">-->
+    <!--        -->
+    <!--      </header>-->
+    <!--    </div>-->
+  </v-app-bar>
 </template>
 
 <script>
@@ -63,7 +89,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .header__color__blue {
   background-color: rgba(80, 225, 216, .7);
@@ -79,35 +105,28 @@ export default {
   left: 0;
   right: 0;
   bottom: calc(100vh - 68px);
-  backdrop-filter: blur(10px);
   transition: backdrop-filter .20s cubic-bezier(.4, 0, .2, 1), box-shadow .20s cubic-bezier(.4, 0, .2, 1), max-width .25s cubic-bezier(.4, 0, .2, 1), width .25s cubic-bezier(.4, 0, .2, 1);
 }
 
 .isScroll {
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
-
-}
-
-.fixed {
-  z-index: 100;
+  backdrop-filter: blur(10px);
 }
 
 .splashNav {
+  transition: backdrop-filter .20s cubic-bezier(.4, 0, .2, 1);
   /*position: relative;*/
-  width: 100%;
+  /*width: 100%;*/
   /*display: flex;*/
   /*justify-content: flex-start;*/
   /*align-items: center;*/
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/*header {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
 
-header .logo {
-  position: relative;
+.logo {
   letter-spacing: 1px;
   font-size: 2em;
   color: #4a5568;
@@ -115,53 +134,73 @@ header .logo {
   font-weight: 700;
 }
 
-header .navigation {
+.navigation {
   position: relative;
   display: flex;
+
 }
 
-header .navigation li {
+
+.navigation ul {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+}
+
+.navigation ul li {
+  display: inline-block;
+  vertical-align: middle;
   list-style: none;
 }
 
-header .navigation li a {
-  display: inline-block;
+.navigation li a {
   color: #4a5568;
   margin-right: 40px;
   text-decoration: none;
 }
 
-header .navigation li a:hover {
-  color: #816b14;
-}
+/*.navigation li a:hover {*/
+/*  color: #816b14;*/
+/*}*/
 
 @media (max-width: 959px) {
-  header {
-    padding: 10px 3vw;
+  .navigation ul {
+    display: none;
+    position: relative;
+    top: 0;
+    right: 0;
+    transform: none;
   }
 
-  header .navigation {
-    position: fixed;
+  .navigation {
+    position: relative;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    backdrop-filter: blur(10px);
-    z-index: 100;
-    justify-content: center;
+    /*backdrop-filter: blur(10px);*/
+    /*z-index: 100;*/
+    justify-content: end;
     align-items: center;
     flex-direction: column;
     display: none;
   }
 
-  header .navigation.activeMenu {
-    display: flex;
+  .navigation.activeMenu {
+    display: block;
   }
 
-  header .navigation li a {
-    font-size: 24px;
-    font-weight: 700;
+  /*.navigation li a {*/
+  /*  font-size: 24px;*/
+  /*  font-weight: 700;*/
+  /*  margin: 10px 0;*/
+  /*}*/
+  .navigation ul li {
+    display: block;
+    text-align: center;
     margin: 10px 0;
+
   }
 
   .togglerMenu {
