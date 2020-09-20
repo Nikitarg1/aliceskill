@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import WOW from 'wowjs'
+import 'animate.css/animate.compat.css'
 import Maincontent from "@/components/Maincontent"
 import Footer from "@/components/Footer"
 
@@ -14,6 +16,9 @@ export default {
   components: {
     Maincontent,
     Footer
+  },
+  mounted() {
+    new WOW.WOW().init()
   },
 };
 </script>
