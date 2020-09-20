@@ -44,13 +44,7 @@ name: "Footer"
 </script>
 
 <style scoped>
-.theme--dark.v-footer {
-  /* background-color: #272727; */
-  color: #fff;
-}
-
-.theme--light.v-footer {
-  /* background-color: #f5f5f5; */
-  color: rgba(0, 0, 0, .87);
+.v-footer {
+  padding: 0;
 }
 </style>
