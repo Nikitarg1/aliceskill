@@ -7,7 +7,7 @@
         v-model="drawer"
         disable-resize-watcher
         width="225"
-        :color="background"
+        :color="this.$vuetify.theme.dark ? backgroundDark : background"
         class="blur"
     >
       <template v-slot:prepend>
@@ -73,7 +73,7 @@
         elevate-on-scroll
         class="blur"
         :class="{ 'isScroll' : letsScroll }"
-        :color="background"
+        :color="this.$vuetify.theme.dark ? backgroundDark : background"
         fixed
     >
       <v-toolbar-title class="logo md:pl-40 logoBlack--text">Rubble</v-toolbar-title>
@@ -110,6 +110,16 @@ export default {
       switch (this.color) {
         case 'brightBlue':
           return 'rgba(80, 225, 216, .7)';
+        case 'brightGreen':
+          return 'rgba(171, 224, 94, .7)';
+        default:
+          return 'rgba(171, 224, 94, .7)'
+      }
+    },
+    backgroundDark: function () {
+      switch (this.color) {
+        case 'brightBlue':
+          return 'rgba(64,180,173,.7)';
         case 'brightGreen':
           return 'rgba(171, 224, 94, .7)';
         default:

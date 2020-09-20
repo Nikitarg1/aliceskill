@@ -9,7 +9,7 @@ const opts = {
         themes: {
             light: {
                 brightBlue: '#85eae4',
-                saturatedBlue: '#8ae2dc',
+                saturatedBlue: '#60a8a3',
                 brightGreen: '#c4e98e',
                 saturatedGreen: '#abe05e',
                 logoBlack: '#4a5568'

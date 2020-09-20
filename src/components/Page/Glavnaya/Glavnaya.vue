@@ -25,8 +25,13 @@
             С помощью нее используя голосовые команды можно всегда узнавать актуальную информацию по постройке жилья. А
             также в будущем даже управлять своим аккаунтом.
           </p>
-          <img src="../../../assets/img/glavnaya/colonra.png" alt="Alice mock" class="my-14 wow fadeInUp"
-               data-wow-offset="100">
+          <v-img src="../../../assets/img/glavnaya/colonra.png"
+                 alt="Alice mock"
+                 class="my-14 wow fadeInUp"
+                 :gradient="this.$vuetify.theme.dark ? 'to bottom, rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,.3),  rgba(0,0,0,.5)' : 'to bottom, rgba(0,0,0,0), rgba(0,0,0,.01)'"
+                 data-wow-offset="100"
+          >
+          </v-img>
           <v-row>
             <v-col
                 v-for="card in cards"
@@ -53,40 +58,6 @@
       <section class="py-24">
         <div class="container">
           <h3 class="text-h4 font-weight-regular text-center mb-24 wow fadeInUp">Новости строительства</h3>
-          <!--                      <v-row >-->
-          <!--                        <v-col-->
-          <!--                            v-for="card in news"-->
-          <!--                            :key="card.title"-->
-          <!--                            :cols="card.flex"-->
-          <!--                        >-->
-          <!--                          <v-card>-->
-          <!--                            <v-img-->
-          <!--                                :src="card.src"-->
-          <!--                                class="white&#45;&#45;text align-end"-->
-          <!--                                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"-->
-          <!--                                height="350px"-->
-          <!--                            >-->
-          <!--                              <v-card-title v-text="card.title"></v-card-title>-->
-          <!--                            </v-img>-->
-
-          <!--                            <v-card-actions>-->
-          <!--                              <v-spacer></v-spacer>-->
-
-          <!--                              <v-btn icon>-->
-          <!--                                <v-icon>mdi-heart</v-icon>-->
-          <!--                              </v-btn>-->
-
-          <!--                              <v-btn icon>-->
-          <!--                                <v-icon>mdi-bookmark</v-icon>-->
-          <!--                              </v-btn>-->
-
-          <!--                              <v-btn icon>-->
-          <!--                                <v-icon>mdi-share-variant</v-icon>-->
-          <!--                              </v-btn>-->
-          <!--                            </v-card-actions>-->
-          <!--                          </v-card>-->
-          <!--                        </v-col>-->
-          <!--                      </v-row>-->
           <v-row>
             <v-col cols="12">
               <v-card
@@ -108,9 +79,9 @@
                 <v-card-actions>
                   <v-btn
                       color="saturatedBlue"
-                      text
+                      icon
                   >
-                    Поделиться
+                    <v-icon>mdi-share-variant</v-icon>
                   </v-btn>
                   <v-btn
                       color="saturatedBlue"
@@ -147,9 +118,9 @@
                 <v-card-actions>
                   <v-btn
                       color="saturatedBlue"
-                      text
+                      icon
                   >
-                    Поделиться
+                    <v-icon>mdi-share-variant</v-icon>
                   </v-btn>
                   <v-btn
                       color="saturatedBlue"
