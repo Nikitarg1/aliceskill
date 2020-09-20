@@ -20,7 +20,7 @@
           <h3 class="text-h4 font-weight-regular mb-4 wow fadeInUp">Алиса <span><img
               src="../../../assets/img/glavnaya/YandexLogo.png"
               alt="alica" width="44px" style="display: inline-block"></span></h3>
-          <p class="text-lg leading-8 wow fadeInUp" data-wow-offset="100">
+          <p class="text-lg leading-8 wow fadeInUp text-justify" data-wow-offset="100">
             Наша команда позаботилась об удобстве пользования нашим сервисом. Мы добавили новую функцую в Яндекс Алису!
             С помощью нее используя голосовые команды можно всегда узнавать актуальную информацию по постройке жилья. А
             также в будущем даже управлять своим аккаунтом.
@@ -41,7 +41,7 @@
               >
                 <v-icon size="56" style="border: 5px solid #8DE0D7; border-radius: 50%; padding: 15px"
                         v-text="card.icon"></v-icon>
-                <v-card-title class="font-weight-medium text-4xl justify-center" v-text="card.title"></v-card-title>
+                <v-card-title class="font-weight-medium text-h5 justify-center" v-text="card.title"></v-card-title>
                 <v-card-subtitle v-text="card.subtitle"></v-card-subtitle>
                 <v-divider class="my-4 mx-auto" style="width: 70%"></v-divider>
                 <v-card-text class="body-1" style="line-height: 2rem" v-text="card.text"></v-card-text>
