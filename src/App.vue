@@ -7,7 +7,7 @@
 
 <script>
 import WOW from 'wowjs'
-import 'animate.css/animate.compat.css'
+import 'animate.css'
 import Maincontent from "@/components/Maincontent"
 import Footer from "@/components/Footer"
 
