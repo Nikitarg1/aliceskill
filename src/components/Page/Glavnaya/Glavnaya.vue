@@ -62,9 +62,10 @@
             <v-col cols="12">
               <v-card
                   min-width="150"
+                  class="wow fadeInUp"
               >
                 <v-img
-                    src="https://kuprod.ru/picture/thumb/892834?original=1&crop=1&rev=1&k=Dlz8oxcVNEf4L_ZTN_Hkfg"
+                    src="../../../assets/img/glavnaya/truby.jpg"
                     class="white--text align-end"
                     height="350px"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.4)"
@@ -101,6 +102,7 @@
             >
               <v-card
                   min-width="150"
+                  class="wow fadeInUp"
               >
                 <v-img
                     :src="card.src"
