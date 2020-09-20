@@ -19,17 +19,6 @@ export default {
 </script>
 
 <style>
-
-.theme--dark.v-footer {
-  /* background-color: #272727; */
-  color: #fff;
-}
-
-.theme--light.v-footer {
-  /* background-color: #f5f5f5; */
-  color: rgba(0, 0, 0, .87);
-}
-
 .v-application {
   color: #4a5568;
 }
