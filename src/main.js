@@ -1,7 +1,7 @@
+import './assets/css/tailwind.css'
 import Vue from 'vue'
 import App from './App.vue'
-import './assets/css/tailwind.css'
-import 'animate.css/animate.compat.css'
+import 'animate.css/source/animate.css'
 import 'vuetify/dist/vuetify.min.css'
 import vuetify from '@/plugins/vuetify'
 

@@ -76,15 +76,22 @@
         :color="background"
         fixed
     >
-      <v-toolbar-title class="logo md:pl-40">Rubble</v-toolbar-title>
+      <v-toolbar-title class="logo md:pl-40 logoBlack--text">Rubble</v-toolbar-title>
+
       <v-spacer></v-spacer>
-      <v-app-bar-nav-icon class="d-block d-sm-none" @click="drawer = true"></v-app-bar-nav-icon>
+
       <ul class="navigation d-none d-sm-flex md:pr-18">
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Этапы</a></li>
-        <li><a href="#">Технологии</a></li>
-        <li><a href="#">Покупатели</a></li>
+        <li><a href="#" class="logoBlack--text">Главная</a></li>
+        <li><a href="#" class="logoBlack--text">Этапы</a></li>
+        <li><a href="#" class="logoBlack--text">Технологии</a></li>
+        <li><a href="#" class="logoBlack--text" style="margin-right: 16px;">Покупатели</a></li>
       </ul>
+
+      <v-btn icon @click="setTheme">
+        <v-icon>{{ this.$vuetify.theme.dark ? 'mdi-brightness-5' : 'mdi-brightness-4' }}</v-icon>
+      </v-btn>
+
+      <v-app-bar-nav-icon class="d-block d-sm-none" @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
   </div>
 </template>
@@ -97,25 +104,35 @@ export default {
     letsScroll: false,
     togglerMenu: false,
     drawer: false,
-
   }),
   computed: {
     background: function () {
       switch (this.color) {
         case 'brightBlue':
           return 'rgba(80, 225, 216, .7)';
-        case 'green':
+        case 'brightGreen':
           return 'rgba(171, 224, 94, .7)';
         default:
           return 'rgba(171, 224, 94, .7)'
       }
+    },
+  },
+  mounted() {
+    const theme = localStorage.getItem("isDark");
+    if (theme) {
+      this.$vuetify.theme.dark = theme === "true";
     }
   },
+  methods: {
+    setTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      localStorage.setItem("isDark", this.$vuetify.theme.dark.toString());
+    }
+  }
 }
 </script>
 
 <style scoped>
-
 .blur {
   backdrop-filter: blur(10px);
 }
@@ -123,13 +140,11 @@ export default {
 .logo {
   letter-spacing: 1px;
   font-size: 2em;
-  color: #4a5568;
   text-decoration: none;
   font-weight: 600;
 }
 
 .navigation li a {
-  color: #4a5568;
   margin-right: 40px;
 }
 </style>

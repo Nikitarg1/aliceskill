@@ -1,20 +1,20 @@
 <template>
   <v-app>
     <Maincontent/>
-    <v-footer app>
-
-    </v-footer>
+    <Footer/>
   </v-app>
 </template>
 
 <script>
 import WOW from 'wowjs'
 import Maincontent from "@/components/Maincontent"
+import Footer from "@/components/Footer"
 
 export default {
   name: 'App',
   components: {
     Maincontent,
+    Footer
   },
   mounted() {
     new WOW.WOW().init()

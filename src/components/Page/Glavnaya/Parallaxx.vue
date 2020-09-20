@@ -1,8 +1,8 @@
 <template>
-  <div class="container--fluid jarallax pa-md-16" style="height: 80vh">
+  <div class="container--fluid jarallax pa-md-16" style="min-height: 80vh">
     <img class="jarallax-img" src="../../../assets/img/glavnaya/bg-header11.png" alt="">
-    <div class="container" style="padding-top: 64px">
-      <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-16 text-gray-700">
+    <div class="container" style="padding-top: 64px; max-width: 1280px;">
+      <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-16 logoBlack--text">
         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 font-medium leading-tight">Мы стираем границы!</h1>
         <p class="text-lg" style="font-size: 1.125rem">
           Узнавайте всю актуальную информацию о стройке вашей квартире самым удобным способом с помощью Rubble и
