@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-navigation-drawer
-        app
         right
         fixed
         v-model="drawer"
@@ -69,10 +68,8 @@
     </v-navigation-drawer>
 
     <v-app-bar
-        app
         elevate-on-scroll
         style="backdrop-filter: blur(10px);"
-        :class="{ 'isScroll' : letsScroll }"
         :color="this.$vuetify.theme.dark ? backgroundDark : background"
         fixed
     >
@@ -101,7 +98,6 @@ export default {
   props: ['color'],
   name: "testHeader",
   data: () => ({
-    letsScroll: false,
     togglerMenu: false,
     drawer: false,
   }),
