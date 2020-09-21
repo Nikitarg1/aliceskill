@@ -68,11 +68,10 @@
     </v-navigation-drawer>
 
     <v-app-bar
-        elevate-on-scroll
-        style="backdrop-filter: blur(10px);"
-        :color="this.$vuetify.theme.dark ? backgroundDark : background"
         fixed
-    >
+        elevate-on-scroll
+        :color="this.$vuetify.theme.dark ? backgroundDark : background">
+
       <v-toolbar-title class="logo md:pl-40 logoBlack--text">Rubble</v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -89,6 +88,10 @@
       </v-btn>
 
       <v-app-bar-nav-icon class="d-block d-sm-none" @click="drawer = true"></v-app-bar-nav-icon>
+    </v-app-bar>
+
+    <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat>
+
     </v-app-bar>
   </div>
 </template>
