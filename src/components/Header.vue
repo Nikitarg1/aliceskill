@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="backdrop-filter: blur(10px);">
     <v-navigation-drawer
         app
         right
@@ -8,7 +8,7 @@
         disable-resize-watcher
         width="225"
         :color="this.$vuetify.theme.dark ? backgroundDark : background"
-        class="blur"
+        style="backdrop-filter: blur(10px);"
     >
       <template v-slot:prepend>
         <v-list-item class="py-4">
@@ -71,7 +71,7 @@
     <v-app-bar
         app
         elevate-on-scroll
-        class="blur"
+        style="backdrop-filter: blur(10px);"
         :class="{ 'isScroll' : letsScroll }"
         :color="this.$vuetify.theme.dark ? backgroundDark : background"
         fixed
@@ -143,9 +143,6 @@ export default {
 </script>
 
 <style scoped>
-.blur {
-  backdrop-filter: blur(10px);
-}
 
 .logo {
   letter-spacing: 1px;
