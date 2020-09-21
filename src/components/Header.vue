@@ -3,11 +3,11 @@
     <v-navigation-drawer
         right
         fixed
+        style="z-index: 7"
         v-model="drawer"
         disable-resize-watcher
         width="225"
         :color="this.$vuetify.theme.dark ? backgroundDark : background"
-        style="backdrop-filter: blur(10px);"
     >
       <template v-slot:prepend>
         <v-list-item class="py-4">
@@ -65,6 +65,19 @@
           </v-btn>
         </div>
       </template>
+    </v-navigation-drawer>
+
+
+    <v-navigation-drawer
+        right
+        fixed
+        style="z-index: 6; background-color: transparent"
+        class="navBlur"
+        v-model="drawer"
+        disable-resize-watcher
+        width="225"
+    >
+      <!--    <div v-if="drawer" class="navBlur v-navigation-drawer"></div>-->
     </v-navigation-drawer>
 
     <v-app-bar
@@ -142,6 +155,11 @@ export default {
 </script>
 
 <style scoped>
+
+.navBlur {
+  backdrop-filter: blur(3px);
+  z-index: 6;
+}
 
 .logo {
   letter-spacing: 1px;
