@@ -67,7 +67,11 @@
       </template>
     </v-navigation-drawer>
 
-    <div v-if="drawer" class="navBlur"></div>
+
+    <transition name="slideLeft">
+      <div v-if="drawer" class="navBlur"></div>
+    </transition>
+
 
     <v-app-bar
         fixed
@@ -92,9 +96,7 @@
       <v-app-bar-nav-icon class="d-block d-sm-none" @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
 
-    <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat>
-
-    </v-app-bar>
+    <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat></v-app-bar>
   </div>
 </template>
 
@@ -144,6 +146,15 @@ export default {
 </script>
 
 <style scoped>
+
+.slideLeft-enter-active, .slideLeft-leave-active {
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.2s;
+}
+
+.slideLeft-enter, .slideLeft-leave-to {
+  transform: translateX(100%);
+}
 
 .navBlur {
   position: fixed;
