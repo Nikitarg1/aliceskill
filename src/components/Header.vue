@@ -7,7 +7,6 @@
         disable-resize-watcher
         width="225"
         :color="this.$vuetify.theme.dark ? backgroundDark : background"
-        style="backdrop-filter: blur(10px);"
     >
       <template v-slot:prepend>
         <v-list-item class="py-4">
