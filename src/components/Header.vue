@@ -67,18 +67,7 @@
       </template>
     </v-navigation-drawer>
 
-
-    <v-navigation-drawer
-        right
-        fixed
-        style="z-index: 6; background-color: transparent"
-        class="navBlur"
-        v-model="drawer"
-        disable-resize-watcher
-        width="225"
-    >
-      <!--    <div v-if="drawer" class="navBlur v-navigation-drawer"></div>-->
-    </v-navigation-drawer>
+    <div v-if="drawer" class="navBlur"></div>
 
     <v-app-bar
         fixed
@@ -157,7 +146,12 @@ export default {
 <style scoped>
 
 .navBlur {
-  backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 225px;
+  height: 100%;
+  backdrop-filter: blur(10px);
   z-index: 6;
 }
 
