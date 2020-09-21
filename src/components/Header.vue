@@ -1,5 +1,5 @@
 <template>
-  <div style="backdrop-filter: blur(10px);">
+  <div>
     <v-navigation-drawer
         app
         right
