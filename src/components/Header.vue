@@ -22,33 +22,46 @@
           dense
       >
         <v-list-item-group>
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Главная</v-list-item-title>
-          </v-list-item>
 
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-book-multiple</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Этапы</v-list-item-title>
-          </v-list-item>
+          <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+                      leave-active-class="animated slideOutLeft">
+            <v-list-item v-show="this.drawer">
+              <v-list-item-icon>
+                <v-icon>mdi-home</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Главная</v-list-item-title>
+            </v-list-item>
+          </transition>
 
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-cog</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Технологии</v-list-item-title>
-          </v-list-item>
+          <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+                      leave-active-class="animated slideOutLeft">
+            <v-list-item v-show="this.drawer">
+              <v-list-item-icon>
+                <v-icon>mdi-book-multiple</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Этапы</v-list-item-title>
+            </v-list-item>
+          </transition>
 
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account-multiple</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Покупатели</v-list-item-title>
-          </v-list-item>
+          <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+                      leave-active-class="animated slideOutLeft">
+            <v-list-item v-show="this.drawer">
+              <v-list-item-icon>
+                <v-icon>mdi-cog</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Технологии</v-list-item-title>
+            </v-list-item>
+          </transition>
+
+          <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+                      leave-active-class="animated slideOutLeft">
+            <v-list-item v-show="this.drawer">
+              <v-list-item-icon>
+                <v-icon>mdi-account-multiple</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Покупатели</v-list-item-title>
+            </v-list-item>
+          </transition>
         </v-list-item-group>
       </v-list>
 
@@ -67,11 +80,9 @@
       </template>
     </v-navigation-drawer>
 
-
     <transition name="slideLeft">
       <div v-if="drawer" class="navBlur"></div>
     </transition>
-
 
     <v-app-bar
         fixed
@@ -101,9 +112,14 @@
 </template>
 
 <script>
+// import navItem from '@/components/helpers/navItem'
+
 export default {
   props: ['color'],
   name: "testHeader",
+  components: {
+    // navItem
+  },
   data: () => ({
     togglerMenu: false,
     drawer: false,
@@ -146,6 +162,17 @@ export default {
 </script>
 
 <style scoped>
+
+/*.slideLeftItem-enter-active{*/
+/*  transition: translateX 1s linear;*/
+/*}*/
+/*.slideLeftItem-enter, .slideLeftItem-leave-to{*/
+/*  transform: translateX(100%);*/
+/*}*/
+/*.slideLeftItem-enter-to, .slideLeftItem-leave{*/
+/*  transform: translateX(0%);*/
+/*}*/
+
 
 .slideLeft-enter-active, .slideLeft-leave-active {
   transition: transform cubic-bezier(0.4, 0, 0.2, 1);
