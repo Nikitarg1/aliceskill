@@ -139,6 +139,7 @@
         </div>
       </section>
     </v-main>
+    <Footer/>
   </div>
 
 </template>
@@ -146,12 +147,14 @@
 <script>
 import Parallaxx from "@/components/Page/Glavnaya/Parallaxx";
 import Header from '@/components/Header'
+import Footer from "@/components/Footer"
 
 export default {
   name: "Glavnaya",
   components: {
     Parallaxx,
     Header,
+    Footer
   },
   data: () => ({
     cards: [

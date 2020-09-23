@@ -1,22 +1,17 @@
 <template>
   <v-app>
     <LoadingScreen :isLoading="isLoading"/>
-    <div v-if="!isLoading">
-      <router-view></router-view>
-      <Footer/>
-    </div>
+    <router-view v-show="!isLoading"></router-view>
   </v-app>
 </template>
 
 <script>
-import Footer from "@/components/Footer"
 import LoadingScreen from '@/components/helpers/LoadingScreen'
 
 export default {
   name: 'App',
   components: {
-    Footer,
-    LoadingScreen
+    LoadingScreen,
   },
   data: () => ({
     isLoading: false
