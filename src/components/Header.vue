@@ -23,53 +23,53 @@
       >
         <v-list-item-group>
 
-          <transition name="slideLeftItem" enter-active-class="animated slideInRight"
-                      leave-active-class="animated slideOutLeft">
-            <router-link to="/">
+          <router-link to="/">
+            <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+                        leave-active-class="animated slideOutLeft">
               <v-list-item v-show="this.drawer">
                 <v-list-item-icon>
                   <v-icon>mdi-home</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>Главная</v-list-item-title>
               </v-list-item>
-            </router-link>
-          </transition>
+            </transition>
+          </router-link>
 
-          <transition name="slideLeftItem" enter-active-class="animated slideInRight"
-                      leave-active-class="animated slideOutLeft">
-            <router-link to="/stages">
+          <router-link to="/stages">
+            <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+                        leave-active-class="animated slideOutLeft">
               <v-list-item v-show="this.drawer">
                 <v-list-item-icon>
                   <v-icon>mdi-book-multiple</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>Этапы</v-list-item-title>
               </v-list-item>
-            </router-link>
-          </transition>
+            </transition>
+          </router-link>
 
-          <transition name="slideLeftItem" enter-active-class="animated slideInRight"
-                      leave-active-class="animated slideOutLeft">
-            <router-link to="/technology">
+          <router-link to="/technology">
+            <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+                        leave-active-class="animated slideOutLeft">
               <v-list-item v-show="this.drawer">
                 <v-list-item-icon>
                   <v-icon>mdi-cog</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>Технологии</v-list-item-title>
               </v-list-item>
-            </router-link>
-          </transition>
+            </transition>
+          </router-link>
 
-          <transition name="slideLeftItem" enter-active-class="animated slideInRight"
-                      leave-active-class="animated slideOutLeft">
-            <router-link to="/buyers">
+          <router-link to="/buyers">
+            <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+                        leave-active-class="animated slideOutLeft">
               <v-list-item v-show="this.drawer">
                 <v-list-item-icon>
                   <v-icon>mdi-account-multiple</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>Покупатели</v-list-item-title>
               </v-list-item>
-            </router-link>
-          </transition>
+            </transition>
+          </router-link>
         </v-list-item-group>
       </v-list>
 

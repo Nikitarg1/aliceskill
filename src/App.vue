@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <LoadingScreen :isLoading="isLoading"/>
-    <router-view v-show="!isLoading"></router-view>
+    <router-view v-if="!isLoading"></router-view>
   </v-app>
 </template>
 
