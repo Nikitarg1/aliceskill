@@ -63,7 +63,7 @@ export default {
 }
 
 .fadeout {
-  animation: fadeout 1s forwards;
+  animation: fadeout .4s forwards;
 }
 
 @keyframes fadeout {

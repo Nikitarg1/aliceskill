@@ -28,7 +28,7 @@ export default {
     fetchData() {
       this.isLoading = true
       setTimeout(() => {
-        this.isLoading = false;
+        this.isLoading = false
       }, 500);
     }
   }
