@@ -25,42 +25,50 @@
 
           <transition name="slideLeftItem" enter-active-class="animated slideInRight"
                       leave-active-class="animated slideOutLeft">
-            <v-list-item v-show="this.drawer">
-              <v-list-item-icon>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Главная</v-list-item-title>
-            </v-list-item>
+            <router-link to="/">
+              <v-list-item v-show="this.drawer">
+                <v-list-item-icon>
+                  <v-icon>mdi-home</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Главная</v-list-item-title>
+              </v-list-item>
+            </router-link>
           </transition>
 
           <transition name="slideLeftItem" enter-active-class="animated slideInRight"
                       leave-active-class="animated slideOutLeft">
-            <v-list-item v-show="this.drawer">
-              <v-list-item-icon>
-                <v-icon>mdi-book-multiple</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Этапы</v-list-item-title>
-            </v-list-item>
+            <router-link to="/stages">
+              <v-list-item v-show="this.drawer">
+                <v-list-item-icon>
+                  <v-icon>mdi-book-multiple</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Этапы</v-list-item-title>
+              </v-list-item>
+            </router-link>
           </transition>
 
           <transition name="slideLeftItem" enter-active-class="animated slideInRight"
                       leave-active-class="animated slideOutLeft">
-            <v-list-item v-show="this.drawer">
-              <v-list-item-icon>
-                <v-icon>mdi-cog</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Технологии</v-list-item-title>
-            </v-list-item>
+            <router-link to="/technology">
+              <v-list-item v-show="this.drawer">
+                <v-list-item-icon>
+                  <v-icon>mdi-cog</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Технологии</v-list-item-title>
+              </v-list-item>
+            </router-link>
           </transition>
 
           <transition name="slideLeftItem" enter-active-class="animated slideInRight"
                       leave-active-class="animated slideOutLeft">
-            <v-list-item v-show="this.drawer">
-              <v-list-item-icon>
-                <v-icon>mdi-account-multiple</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Покупатели</v-list-item-title>
-            </v-list-item>
+            <router-link to="/buyers">
+              <v-list-item v-show="this.drawer">
+                <v-list-item-icon>
+                  <v-icon>mdi-account-multiple</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>Покупатели</v-list-item-title>
+              </v-list-item>
+            </router-link>
           </transition>
         </v-list-item-group>
       </v-list>
@@ -94,10 +102,18 @@
       <v-spacer></v-spacer>
 
       <ul class="navigation d-none d-sm-flex md:pr-18">
-        <li><a href="#" class="logoBlack--text">Главная</a></li>
-        <li><a href="#" class="logoBlack--text">Этапы</a></li>
-        <li><a href="#" class="logoBlack--text">Технологии</a></li>
-        <li><a href="#" class="logoBlack--text" style="margin-right: 16px;">Покупатели</a></li>
+        <router-link to="/">
+          <li><a href="#" class="logoBlack--text">Главная</a></li>
+        </router-link>
+        <router-link to="/stages">
+          <li><a href="#" class="logoBlack--text">Этапы</a></li>
+        </router-link>
+        <router-link to="/technology">
+          <li><a href="#" class="logoBlack--text">Технологии</a></li>
+        </router-link>
+        <router-link to="/buyers">
+          <li><a href="#" class="logoBlack--text" style="margin-right: 16px;">Покупатели</a></li>
+        </router-link>
       </ul>
 
       <v-btn icon @click="setTheme">

@@ -1,21 +1,38 @@
 <template>
   <v-app>
-    <Maincontent/>
-    <Footer/>
+    <LoadingScreen :isLoading="isLoading"/>
+    <div v-if="!isLoading">
+      <router-view></router-view>
+      <Footer/>
+    </div>
   </v-app>
 </template>
 
 <script>
-import Maincontent from "@/components/Maincontent"
 import Footer from "@/components/Footer"
+import LoadingScreen from '@/components/helpers/LoadingScreen'
 
 export default {
   name: 'App',
   components: {
-    Maincontent,
-    Footer
+    Footer,
+    LoadingScreen
+  },
+  data: () => ({
+    isLoading: false
+  }),
+  watch: {
+    $route: 'fetchData'
+  },
+  methods: {
+    fetchData() {
+      this.isLoading = true
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 500);
+    }
   }
-};
+}
 </script>
 
 <style>

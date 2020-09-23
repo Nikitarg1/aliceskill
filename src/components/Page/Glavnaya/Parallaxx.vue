@@ -4,7 +4,7 @@
            src="../../../assets/img/glavnaya/bg-header11.png"
            alt="parallax"
            :gradient="this.$vuetify.theme.dark ? 'to bottom, rgba(0,0,0,.2), rgba(0,0,0,.2)' : 'to bottom, rgba(0,0,0,0), rgba(0,0,0,.01)'"
-           position="85% 48%"
+           position="85% 43%"
     />
     <div class="container" style="padding-top: 64px; max-width: 1280px;">
       <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-16 logoBlack--text">
@@ -24,7 +24,6 @@
 <script>
 export default {
   name: 'Parallaxx',
-  data: () => ({}),
 }
 </script>
 
