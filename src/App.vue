@@ -39,8 +39,4 @@ export default {
 .v-application {
   color: #4a5568;
 }
-
-.v-navigation-drawer {
-  left: auto;
-}
 </style>

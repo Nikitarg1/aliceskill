@@ -3,7 +3,7 @@
     <v-navigation-drawer
         right
         fixed
-        style="z-index: 7"
+        style="z-index: 7;left: auto;"
         v-model="drawer"
         disable-resize-watcher
         width="225"
