@@ -120,17 +120,19 @@
         <v-icon>{{ this.$vuetify.theme.dark ? 'mdi-brightness-5' : 'mdi-brightness-4' }}</v-icon>
       </v-btn>
 
+      <v-app-bar-nav-icon class="d-block d-sm-none" @click="drawer = true"></v-app-bar-nav-icon>
+
       <v-progress-linear
           :active="isLoading"
           buffer-value="100"
           v-model="valueProgress"
+          style="position: absolute"
           absolute
           bottom
           rounded
           color="blue"
       ></v-progress-linear>
 
-      <v-app-bar-nav-icon class="d-block d-sm-none" @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
 
     <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat></v-app-bar>
