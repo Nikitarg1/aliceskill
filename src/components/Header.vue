@@ -120,10 +120,22 @@
         <v-icon>{{ this.$vuetify.theme.dark ? 'mdi-brightness-5' : 'mdi-brightness-4' }}</v-icon>
       </v-btn>
 
+      <v-progress-linear
+          :active="isLoading"
+          buffer-value="100"
+          v-model="valueProgress"
+          absolute
+          bottom
+          rounded
+          color="blue"
+      ></v-progress-linear>
+
       <v-app-bar-nav-icon class="d-block d-sm-none" @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
 
     <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat></v-app-bar>
+
+
   </div>
 </template>
 
@@ -131,7 +143,7 @@
 // import navItem from '@/components/helpers/navItem'
 
 export default {
-  props: ['color'],
+  props: ['color', 'isLoading', 'valueProgress'],
   name: "testHeader",
   components: {
     // navItem
@@ -144,9 +156,9 @@ export default {
     background: function () {
       switch (this.color) {
         case 'brightBlue':
-          return 'rgba(80, 225, 216, .7)';
+          return 'rgba(80, 225, 216, .7)'
         case 'brightGreen':
-          return 'rgba(171, 224, 94, .7)';
+          return 'rgba(171, 224, 94, .7)'
         default:
           return 'rgba(171, 224, 94, .7)'
       }
@@ -154,9 +166,9 @@ export default {
     backgroundDark: function () {
       switch (this.color) {
         case 'brightBlue':
-          return 'rgba(64,180,173,.7)';
+          return 'rgba(64,180,173,.7)'
         case 'brightGreen':
-          return 'rgba(171, 224, 94, .7)';
+          return 'rgba(171, 224, 94, .7)'
         default:
           return 'rgba(171, 224, 94, .7)'
       }

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header color="brightBlue"/>
     <v-main style="padding: 0">
       <parallaxx/>
       <section class="py-24 ">
@@ -146,14 +145,12 @@
 
 <script>
 import Parallaxx from "@/components/Page/Glavnaya/Parallaxx";
-import Header from '@/components/Header'
 import Footer from "@/components/Footer"
 
 export default {
   name: "Glavnaya",
   components: {
     Parallaxx,
-    Header,
     Footer
   },
   data: () => ({
@@ -185,7 +182,7 @@ export default {
         src: 'https://lifetambov.ru/assets/images/tickets/%D0%9A%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F46%D1%84%D0%BE%D1%82%D0%BE/IMG_20190312_181327.jpg'
       },
       {
-        title: 'Безопастность',
+        title: 'Безопасность',
         number: 'Три дня назад',
         text: 'Закончили выгонять бомжей с технического этажа',
         src: 'https://31tv.ru/wp-content/uploads/2020/01/%D0%BF%D1%80%D0%B8%D1%8E%D1%825.jpg'

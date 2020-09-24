@@ -1,30 +1,40 @@
 <template>
   <v-app>
-    <LoadingScreen :isLoading="isLoading"/>
+    <Header :isLoading="isLoading" :valueProgress="valueProgress"
+            :color="this.$route.path==='/' ? 'brightBlue' : 'brightGreen'"></Header>
     <router-view v-if="!isLoading"></router-view>
   </v-app>
 </template>
 
 <script>
-import LoadingScreen from '@/components/helpers/LoadingScreen'
+import Header from "@/components/Header";
 
 export default {
   name: 'App',
   components: {
-    LoadingScreen,
+    Header
   },
   data: () => ({
-    isLoading: false
+    isLoading: false,
+    valueProgress: 0,
+    interval: 0
   }),
   watch: {
-    $route: 'fetchData'
+    $route: 'fetchData',
   },
   methods: {
     fetchData() {
       this.isLoading = true
+      this.valueProgress = 0
+      clearInterval(this.interval)
+
+      this.interval = setInterval(() => {
+        this.valueProgress += 25
+      }, 300)
+
       setTimeout(() => {
         this.isLoading = false
-      }, 500);
+      }, 1500);
     }
   }
 }
