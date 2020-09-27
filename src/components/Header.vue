@@ -10,63 +10,26 @@
         :color="this.$vuetify.theme.dark ? backgroundDark : background"
     >
       <template v-slot:prepend>
-        <v-list-item class="py-4">
-          <img src="../assets/img/glavnaya/logo.png" alt="Rubble logo">
-        </v-list-item>
+        <v-list-item></v-list-item>
+        <transition name="slideLeftItem" enter-active-class="animated slideInRight navItemOne"
+                    leave-active-class="animated slideOutLeft">
+          <v-list-item class="mb-2" v-show="drawer">
+            <h1 class="text-3xl font-weight-bold logoBlack--text">Меню</h1>
+          </v-list-item>
+        </transition>
       </template>
-
-      <v-divider></v-divider>
-
       <v-list
           nav
-          dense
-      >
+          dense>
         <v-list-item-group>
-
-          <router-link to="/">
-            <transition name="slideLeftItem" enter-active-class="animated slideInRight"
+          <router-link :to="'/' + item.link" v-for="item in liItems" :key="item.name" style="color: inherit;">
+            <transition name="slideLeftItem" :enter-active-class="item.class"
                         leave-active-class="animated slideOutLeft">
-              <v-list-item v-show="this.drawer">
+              <v-list-item v-show="drawer">
                 <v-list-item-icon>
-                  <v-icon>mdi-home</v-icon>
+                  <v-icon>{{ item.icon }}</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title>Главная</v-list-item-title>
-              </v-list-item>
-            </transition>
-          </router-link>
-
-          <router-link to="/stages">
-            <transition name="slideLeftItem" enter-active-class="animated slideInRight"
-                        leave-active-class="animated slideOutLeft">
-              <v-list-item v-show="this.drawer">
-                <v-list-item-icon>
-                  <v-icon>mdi-book-multiple</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Этапы</v-list-item-title>
-              </v-list-item>
-            </transition>
-          </router-link>
-
-          <router-link to="/technology">
-            <transition name="slideLeftItem" enter-active-class="animated slideInRight"
-                        leave-active-class="animated slideOutLeft">
-              <v-list-item v-show="this.drawer">
-                <v-list-item-icon>
-                  <v-icon>mdi-cog</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Технологии</v-list-item-title>
-              </v-list-item>
-            </transition>
-          </router-link>
-
-          <router-link to="/buyers">
-            <transition name="slideLeftItem" enter-active-class="animated slideInRight"
-                        leave-active-class="animated slideOutLeft">
-              <v-list-item v-show="this.drawer">
-                <v-list-item-icon>
-                  <v-icon>mdi-account-multiple</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Покупатели</v-list-item-title>
+                <v-list-item-title>{{ item.name }}</v-list-item-title>
               </v-list-item>
             </transition>
           </router-link>
@@ -74,17 +37,20 @@
       </v-list>
 
       <template v-slot:append>
-        <div class="pb-4 text-center">
-          <v-btn icon large>
-            <v-icon>mdi-telegram</v-icon>
-          </v-btn>
-          <v-btn icon large>
-            <v-icon>mdi-instagram</v-icon>
-          </v-btn>
-          <v-btn icon large>
-            <v-icon>mdi-vk</v-icon>
-          </v-btn>
-        </div>
+        <transition name="slideLeftItem" enter-active-class="animated slideInRight navItemSix"
+                    leave-active-class="animated slideOutLeft">
+          <div class="pb-4 text-center" v-show="drawer">
+            <v-btn icon large>
+              <v-icon>mdi-telegram</v-icon>
+            </v-btn>
+            <v-btn icon large>
+              <v-icon>mdi-instagram</v-icon>
+            </v-btn>
+            <v-btn icon large>
+              <v-icon>mdi-vk</v-icon>
+            </v-btn>
+          </div>
+        </transition>
       </template>
     </v-navigation-drawer>
 
@@ -102,18 +68,10 @@
       <v-spacer></v-spacer>
 
       <ul class="navigation d-none d-sm-flex md:pr-18">
-        <router-link to="/">
-          <li><a href="#" class="logoBlack--text">Главная</a></li>
-        </router-link>
-        <router-link to="/stages">
-          <li><a href="#" class="logoBlack--text">Этапы</a></li>
-        </router-link>
-        <router-link to="/technology">
-          <li><a href="#" class="logoBlack--text">Технологии</a></li>
-        </router-link>
-        <router-link to="/buyers">
-          <li><a href="#" class="logoBlack--text" style="margin-right: 16px;">Покупатели</a></li>
-        </router-link>
+        <li v-for="item in liItems"
+            :key="item.name">
+          <a :href="'/' + item.link" class="logoBlack--text" :style="item.style">{{ item.name }}</a>
+        </li>
       </ul>
 
       <v-btn icon @click="setTheme">
@@ -137,22 +95,27 @@
 
     <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat></v-app-bar>
 
-
   </div>
 </template>
 
 <script>
-// import navItem from '@/components/helpers/navItem'
-
 export default {
   props: ['color', 'isLoading', 'valueProgress'],
   name: "testHeader",
-  components: {
-    // navItem
-  },
   data: () => ({
-    togglerMenu: false,
     drawer: false,
+    liItems: [
+      {link: '', name: 'Главная', icon: 'mdi-home', class: 'navItemTwo animated slideInRight'},
+      {link: 'stages', name: 'Этапы', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight'},
+      {link: 'technology', name: 'Технологии', icon: 'mdi-cog', class: 'navItemFour animated slideInRight'},
+      {
+        link: 'buyers',
+        name: 'Покупатели',
+        icon: 'mdi-account-multiple',
+        style: 'margin-right: 16px;',
+        class: 'navItemFive animated slideInRight'
+      }
+    ]
   }),
   computed: {
     background: function () {
@@ -193,16 +156,29 @@ export default {
 
 <style scoped>
 
-/*.slideLeftItem-enter-active{*/
-/*  transition: translateX 1s linear;*/
-/*}*/
-/*.slideLeftItem-enter, .slideLeftItem-leave-to{*/
-/*  transform: translateX(100%);*/
-/*}*/
-/*.slideLeftItem-enter-to, .slideLeftItem-leave{*/
-/*  transform: translateX(0%);*/
-/*}*/
+.navItemOne {
+  --animate-duration: 500ms;
+}
 
+.navItemTwo {
+  --animate-duration: 550ms;
+}
+
+.navItemTree {
+  --animate-duration: 600ms;
+}
+
+.navItemFour {
+  --animate-duration: 650ms;
+}
+
+.navItemFive {
+  --animate-duration: 700ms;
+}
+
+.navItemSix {
+  --animate-duration: 750ms;
+}
 
 .slideLeft-enter-active, .slideLeft-leave-active {
   transition: transform cubic-bezier(0.4, 0, 0.2, 1);
