@@ -2,7 +2,7 @@
   <div>
     <v-main style="padding: 0">
       <parallaxx/>
-      <section class="py-24 ">
+      <section class="py-24">
         <div class="container">
           <h3 class="text-h4 font-weight-regular text-center mb-4 wow fadeInUp">Кто мы?</h3>
           <p class="text-lg leading-8 wow fadeInUp text-justify" data-wow-offset="100">

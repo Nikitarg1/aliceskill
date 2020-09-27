@@ -1,9 +1,11 @@
 <template>
-  <div class="container--fluid jarallax pa-md-16" style="min-height: 80vh">
-    <v-img class="jarallax-img"
-           src="../../../assets/img/glavnaya/bg-header11.png"
-           alt="parallax"
-           :gradient="this.$vuetify.theme.dark ? 'to bottom, rgba(0,0,0,.2), rgba(0,0,0,.2)' : 'to bottom, rgba(0,0,0,0), rgba(0,0,0,.01)'"
+  <div class="container--fluid pa-md-16 jarallax widthMobile">
+    <v-img
+        class="jarallax-img"
+        src="../../../assets/img/glavnaya/bg-header11.png"
+        alt="parallax"
+        :gradient="this.$vuetify.theme.dark ? 'to bottom, rgba(0,0,0,.2), rgba(0,0,0,.2)' : 'to bottom, rgba(0,0,0,0), rgba(0,0,0,.01)'"
+        position="100% 47%"
     />
     <div class="container" style="padding-top: 64px; max-width: 1280px;">
       <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-16 logoBlack--text">
@@ -15,32 +17,31 @@
         </p>
       </div>
     </div>
-
-
   </div>
 </template>
 
 <script>
+import {jarallax} from 'jarallax';
+import 'jarallax/dist/jarallax.css'
+
 export default {
   name: 'Parallaxx',
+  mounted() {
+    jarallax(document.querySelectorAll('.jarallax'), {
+      type: 'scale', //scale-opacity
+      speed: 0.5,
+    });
+  }
 }
 </script>
-
 <style>
-
-.jarallax {
-  position: relative;
-  z-index: 0;
+.widthMobile {
+  height: 90vh
 }
 
-.jarallax > .jarallax-img {
-  position: absolute;
-  object-fit: cover;
-  font-family: 'object-fit: cover;';
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+@media screen and (max-width: 599px) {
+  .widthMobile {
+    height: 70vh
+  }
 }
 </style>

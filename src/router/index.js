@@ -24,16 +24,11 @@ const routes = [
     name: 'buyers',
     component: () => import('../components/Page/Buyers/buyers')
   }
-
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history' // убирает /#/ ванчале ссылки
 })
 
 export default router
