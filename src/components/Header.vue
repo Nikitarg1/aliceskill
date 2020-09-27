@@ -112,8 +112,8 @@ export default {
         link: 'buyers',
         name: 'Покупатели',
         icon: 'mdi-account-multiple',
-        style: 'margin-right: 16px;',
-        class: 'navItemFive animated slideInRight'
+        class: 'navItemFive animated slideInRight',
+        style: 'margin-right: 16px;'
       }
     ]
   }),
@@ -156,6 +156,27 @@ export default {
 
 <style scoped>
 
+.navBlur {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 225px;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 6;
+}
+
+.logo {
+  letter-spacing: 1px;
+  font-size: 2em;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navigation li a {
+  margin-right: 40px;
+}
+
 .navItemOne {
   --animate-duration: 500ms;
 }
@@ -187,26 +208,5 @@ export default {
 
 .slideLeft-enter, .slideLeft-leave-to {
   transform: translateX(100%);
-}
-
-.navBlur {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 225px;
-  height: 100%;
-  backdrop-filter: blur(10px);
-  z-index: 6;
-}
-
-.logo {
-  letter-spacing: 1px;
-  font-size: 2em;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.navigation li a {
-  margin-right: 40px;
 }
 </style>

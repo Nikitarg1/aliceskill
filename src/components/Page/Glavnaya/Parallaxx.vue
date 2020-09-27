@@ -36,12 +36,12 @@ export default {
 </script>
 <style>
 .widthMobile {
-  height: 90vh
+  min-height: 90vh
 }
 
 @media screen and (max-width: 599px) {
   .widthMobile {
-    height: 70vh
+    min-height: 70vh
   }
 }
 </style>
