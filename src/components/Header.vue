@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-navigation-drawer
+        app
         right
         fixed
         style="z-index: 7;left: auto;"
@@ -59,6 +60,7 @@
     </transition>
 
     <v-app-bar
+        app
         fixed
         elevate-on-scroll
         :color="this.$vuetify.theme.dark ? backgroundDark : background">
@@ -78,7 +80,7 @@
         <v-icon>{{ this.$vuetify.theme.dark ? 'mdi-brightness-5' : 'mdi-brightness-4' }}</v-icon>
       </v-btn>
 
-      <v-app-bar-nav-icon class="d-block d-sm-none" @click="drawer = true"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon class="d-block d-sm-none" @click.stop="drawer = true"></v-app-bar-nav-icon>
 
       <v-progress-linear
           :active="isLoading"
@@ -94,6 +96,11 @@
     </v-app-bar>
 
     <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat></v-app-bar>
+
+    <div style="width: 150px; height: 100%; position: fixed; z-index: 3; right: 0;"
+         v-touch="{left: () => drawer = true}"
+    ></div>
+    <!--    Свайп для бокового меню-->
 
   </div>
 </template>
@@ -178,27 +185,27 @@ export default {
 }
 
 .navItemOne {
-  --animate-duration: 500ms;
+  --animate-duration: 300ms;
 }
 
 .navItemTwo {
-  --animate-duration: 550ms;
+  --animate-duration: 350ms;
 }
 
 .navItemTree {
-  --animate-duration: 600ms;
+  --animate-duration: 400ms;
 }
 
 .navItemFour {
-  --animate-duration: 650ms;
+  --animate-duration: 450ms;
 }
 
 .navItemFive {
-  --animate-duration: 700ms;
+  --animate-duration: 500ms;
 }
 
 .navItemSix {
-  --animate-duration: 750ms;
+  --animate-duration: 550ms;
 }
 
 .slideLeft-enter-active, .slideLeft-leave-active {

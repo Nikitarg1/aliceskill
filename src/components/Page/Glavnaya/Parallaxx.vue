@@ -29,7 +29,7 @@ export default {
   mounted() {
     jarallax(document.querySelectorAll('.jarallax'), {
       type: 'scale', //scale-opacity
-      speed: 0.5,
+      speed: 0.8,
     });
   }
 }
