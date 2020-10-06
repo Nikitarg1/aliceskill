@@ -97,7 +97,7 @@
 
     <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat></v-app-bar>
 
-    <div style="width: 150px; height: 100%; position: fixed; z-index: 3; right: 0;"
+    <div class="d-block d-sm-none" style="width: 25px; height: 100%; position: fixed; z-index: 3; right: 0;"
          v-touch="{left: () => drawer = true}"
     ></div>
     <!--    Свайп для бокового меню-->
@@ -138,9 +138,9 @@ export default {
     backgroundDark: function () {
       switch (this.color) {
         case 'brightBlue':
-          return 'rgba(64,180,173,.7)'
+          return 'rgba(64,180,173, .7)'
         case 'brightGreen':
-          return 'rgba(171, 224, 94, .7)'
+          return 'rgba(171,224,94, .7)'
         default:
           return 'rgba(171, 224, 94, .7)'
       }

@@ -19,7 +19,7 @@ const opts = {
                 brightBlue: '#85eae4',
                 saturatedBlue: '#8ae2dc',
                 // brightGreen: '#c4e98e',
-                saturatedGreen: '#abe05e',
+                saturatedGreen: '#ABE05E',
                 logoBlack: '#ffffff'
             },
         },
