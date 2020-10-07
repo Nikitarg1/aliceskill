@@ -1,7 +1,6 @@
 <template>
   <div>
     <v-navigation-drawer
-        app
         right
         fixed
         style="z-index: 7;left: auto;"
@@ -60,7 +59,6 @@
     </transition>
 
     <v-app-bar
-        app
         fixed
         elevate-on-scroll
         :color="this.$vuetify.theme.dark ? backgroundDark : background">
@@ -113,8 +111,7 @@ export default {
     drawer: false,
     liItems: [
       {link: '', name: 'Главная', icon: 'mdi-home', class: 'navItemTwo animated slideInRight'},
-      {link: 'stages', name: 'Этапы', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight'},
-      {link: 'technology', name: 'Технологии', icon: 'mdi-cog', class: 'navItemFour animated slideInRight'},
+      {link: 'myHouse', name: 'Мой дом', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight'},
       {
         link: 'buyers',
         name: 'Покупатели',

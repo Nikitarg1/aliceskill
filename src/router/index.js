@@ -10,14 +10,9 @@ const routes = [
     component: () => import('../components/Page/Glavnaya/Glavnaya.vue')
   },
   {
-    path: '/stages',
-    name: 'stages',
+    path: '/myHouse',
+    name: 'myHouse',
     component: () => import('../components/Page/Stages/Stages')
-  },
-  {
-    path: '/technology',
-    name: 'technology',
-    component: () => import('../components/Page/Technology/technology')
   },
   {
     path: '/buyers',

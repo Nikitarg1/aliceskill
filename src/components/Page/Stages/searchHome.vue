@@ -46,22 +46,23 @@
         >
           <v-btn-toggle
               v-model="sortDesc"
-              mandatory>
+              borderless
+          >
             <v-btn
                 large
                 depressed
+                block
                 :value="false"
                 color="saturatedGreen"
-                width="50%"
             >
               <v-icon>mdi-arrow-up</v-icon>
             </v-btn>
             <v-btn
                 large
+                block
                 depressed
                 :value="true"
                 color="saturatedGreen"
-                width="50%"
             >
               <v-icon>mdi-arrow-down</v-icon>
             </v-btn>
@@ -251,5 +252,7 @@ export default {
 </script>
 
 <style scoped>
-
+.v-btn-toggle {
+  width: 50%;
+}
 </style>
