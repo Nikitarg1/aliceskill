@@ -1,7 +1,7 @@
 import './assets/css/tailwind.css'
 import Vue from 'vue'
-import App from './App.vue'
 import vuetify from '@/plugins/vuetify'
+import App from './App.vue'
 import router from './router'
 
 
