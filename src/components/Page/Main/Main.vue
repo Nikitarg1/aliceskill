@@ -144,7 +144,7 @@
 </template>
 
 <script>
-import Parallaxx from "@/components/Page/Glavnaya/Parallaxx";
+import Parallaxx from "@/components/Page/Main/Parallaxx";
 import Footer from "@/components/Footer"
 import {mapGetters} from "vuex"
 

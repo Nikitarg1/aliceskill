@@ -36,7 +36,7 @@
               outlined
               hide-details
               :items="keysRus"
-              label="Фильтер"
+              label="Фильтр"
               color="saturatedGreen"
           ></v-select>
         </v-col>
@@ -81,7 +81,7 @@
             md="4"
             lg="4"
         >
-          <router-link :to="'/myHouse/' + item.name">
+          <router-link :to="'/houses/' + item.name">
             <v-card hover>
               <v-img
                   class="white--text align-end"

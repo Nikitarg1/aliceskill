@@ -63,7 +63,7 @@
         elevate-on-scroll
         :color="this.$vuetify.theme.dark ? backgroundDark : background">
       <router-link to="/">
-        <v-toolbar-title class="logo md:pl-40 logoBlack--text">Rubble</v-toolbar-title>
+        <v-toolbar-title class="logo ml-16 logoBlack--text">Rubble</v-toolbar-title>
       </router-link>
 
       <v-spacer></v-spacer>
@@ -112,7 +112,7 @@ export default {
     drawer: false,
     liItems: [
       {link: '', name: 'Главная', icon: 'mdi-home', class: 'navItemTwo animated slideInRight'},
-      {link: 'myHouse', name: 'Мой дом', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight'},
+      {link: 'houses', name: 'Мой дом', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight'},
       {
         link: 'buyers',
         name: 'Покупатели',
@@ -160,6 +160,10 @@ export default {
 </script>
 
 <style scoped>
+
+.ml-17 {
+  margin-left: ($ spacer-x *.25) !important;
+}
 
 .navBlur {
   position: fixed;
