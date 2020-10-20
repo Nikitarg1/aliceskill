@@ -2,7 +2,7 @@
   <div>
     <div class="container--fluid">
       <v-img dark
-             src="../../../assets/img/myHouse/bgmyHouse.png"
+             src="../../../assets/img/houses/bgHouses.png"
              class="align-center justify-center"
              height="60vh"
              gradient="to bottom, rgba(0,0,0,.2), rgba(0,0,0,.2)"
