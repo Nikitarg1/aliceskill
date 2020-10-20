@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>gfdhhhhhhhhhhhhh</div>
+  <div style="padding-top: 64px;">
+    <div class="text-center" style="min-height: 80vh">Покупатели</div>
     <Footer/>
   </div>
 </template>

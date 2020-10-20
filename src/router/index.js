@@ -15,6 +15,11 @@ const routes = [
     component: () => import('../components/Page/Stages/Stages')
   },
   {
+    path: '/myHouse/:name',
+    name: 'itemHouse',
+    component: () => import('../components/Page/Stages/itemHouse')
+  },
+  {
     path: '/buyers',
     name: 'buyers',
     component: () => import('../components/Page/Buyers/buyers')

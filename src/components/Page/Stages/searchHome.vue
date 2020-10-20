@@ -1,6 +1,6 @@
 <template>
   <v-data-iterator
-      :items="items"
+      :items="searchItem"
       :items-per-page.sync="itemsPerPage"
       :page="page"
       :search="search"
@@ -81,30 +81,32 @@
             md="4"
             lg="4"
         >
-          <v-card>
-            <v-img
-                class="white--text align-end"
-                height="200"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.4)"
-                :src="item.img">
-              <v-card-title class="subheading font-weight-bold">
-                {{ 'ЖК ' + item.name }}
-              </v-card-title>
-            </v-img>
+          <router-link :to="'/myHouse/' + item.name">
+            <v-card hover>
+              <v-img
+                  class="white--text align-end"
+                  height="200"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.4)"
+                  :src="item.img">
+                <v-card-title class="subheading font-weight-bold">
+                  {{ 'ЖК ' + item.name }}
+                </v-card-title>
+              </v-img>
 
-            <v-card-subtitle class="pb-0">
+              <v-card-subtitle class="pb-0">
               {{ item.address }}
             </v-card-subtitle>
 
-            <v-card-text class="text--primary ">
-              <div v-for="(key, index) in filteredKeys"
-                   :key="index">
-                <div :class="{ 'saturatedGreen--text': sortBy === key }">
-                  {{ item[key.toLowerCase()] }}
+              <v-card-text class="text--primary ">
+                <div v-for="(key, index) in filteredKeys"
+                     :key="index">
+                  <div :class="{ 'saturatedGreen--text': sortBy === key }">
+                    {{ item[key.toLowerCase()] }}
+                  </div>
                 </div>
-              </div>
-            </v-card-text>
-          </v-card>
+              </v-card-text>
+            </v-card>
+          </router-link>
         </v-col>
       </v-row>
     </template>
@@ -230,8 +232,11 @@ export default {
     ],
   }),
   computed: {
+    searchItem() {
+      return this.$store.getters.searchItem
+    },
     numberOfPages() {
-      return Math.ceil(this.items.length / this.itemsPerPage)
+      return Math.ceil(this.searchItem.length / this.itemsPerPage)
     },
     filteredKeys() {
       return this.keys.filter(keyss => keyss !== 'name')

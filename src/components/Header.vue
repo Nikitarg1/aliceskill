@@ -62,8 +62,9 @@
         fixed
         elevate-on-scroll
         :color="this.$vuetify.theme.dark ? backgroundDark : background">
-
-      <v-toolbar-title class="logo md:pl-40 logoBlack--text">Rubble</v-toolbar-title>
+      <router-link to="/">
+        <v-toolbar-title class="logo md:pl-40 logoBlack--text">Rubble</v-toolbar-title>
+      </router-link>
 
       <v-spacer></v-spacer>
 
