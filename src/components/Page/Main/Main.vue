@@ -17,9 +17,10 @@
       </section>
       <section class="py-24 text-center">
         <div class="container">
-          <h3 class="text-h4 font-weight-regular mb-4 wow fadeInUp">Алиса <span><img
-              src="../../../assets/img/glavnaya/YandexLogo.png"
-              alt="alica" width="44px" style="display: inline-block"></span></h3>
+          <h3 class="text-h4 font-weight-regular mb-4 wow fadeInUp">Алиса <span>
+            <img
+                src="../../../assets/img/glavnaya/YandexLogo.png"
+                alt="alica" width="44px" style="display: inline-block"></span></h3>
           <p class="text-lg leading-8 wow fadeInUp text-justify" data-wow-offset="100">
             Наша команда позаботилась об удобстве пользования нашим сервисом. Мы добавили новую функцию в Яндекс Алису!
             С помощью нее, используя голосовые команды, можно всегда узнавать актуальную информацию по постройке жилья.

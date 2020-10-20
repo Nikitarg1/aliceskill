@@ -97,7 +97,7 @@
     <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat></v-app-bar>
 
     <div class="d-block d-sm-none" style="width: 25px; height: 100%; position: fixed; z-index: 3; right: 0;"
-         v-touch="{left: () => drawer = true}"
+         v-touch="{left: () => this.drawer = true}"
     ></div>
     <!--    Свайп для бокового меню-->
 
@@ -105,6 +105,7 @@
 </template>
 
 <script>
+
 export default {
   props: ['color', 'isLoading', 'valueProgress'],
   name: "testHeader",
