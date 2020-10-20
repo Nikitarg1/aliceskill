@@ -160,11 +160,6 @@ export default {
 </script>
 
 <style scoped>
-
-.ml-17 {
-  margin-left: ($ spacer-x *.25) !important;
-}
-
 .navBlur {
   position: fixed;
   top: 0;
