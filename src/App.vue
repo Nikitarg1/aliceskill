@@ -2,9 +2,7 @@
   <v-app>
     <Header :isLoading="isLoading" :valueProgress="valueProgress"
             :color="this.$route.path==='/' ? 'brightBlue' : 'brightGreen'"></Header>
-    <v-main>
       <router-view v-if="!isLoading"></router-view>
-    </v-main>
   </v-app>
 </template>
 
