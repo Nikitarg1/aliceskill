@@ -37,6 +37,9 @@ export default {
         this.isLoading = false
       }, 1500);
     }
+  },
+  mounted() {
+    console.log("Hello, World")
   }
 }
 </script>
