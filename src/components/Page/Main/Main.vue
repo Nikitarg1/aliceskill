@@ -96,7 +96,7 @@
               </v-card>
             </v-col>
             <v-col
-                v-for="card in newsInGlavnzya"
+                v-for="card in newsInGlavnaya"
                 :key="card.title"
                 cols="12"
                 md="6"
@@ -158,7 +158,7 @@ export default {
   data: () => ({}),
   computed: {
     ...mapGetters([
-      'newsInGlavnzya',
+      'newsInGlavnaya',
       'cardsInAlice',
     ])
   }

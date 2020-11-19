@@ -1,14 +1,14 @@
 <template>
   <v-app>
-    <Header :isLoading="isLoading" :valueProgress="valueProgress"
-            :color="this.$route.path==='/' ? 'brightBlue' : 'brightGreen'"></Header>
+    <Header :isLoading="isLoading" :valueProgress="valueProgress"></Header>
+    <v-main app>
       <router-view v-if="!isLoading"></router-view>
+    </v-main>
   </v-app>
 </template>
 
 <script>
 import Header from "@/components/Header";
-
 
 export default {
   name: 'App',
@@ -17,8 +17,9 @@ export default {
   },
   data: () => ({
     isLoading: false,
+    letsScroll: false,
     valueProgress: 0,
-    interval: 0
+    interval: 0,
   }),
   watch: {
     $route: 'fetchData',

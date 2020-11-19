@@ -20,7 +20,7 @@ export default {
                 text: 'Мы ничего не просим за наш сервис. Все распространяется бесплатно. Единственное, за счет чего мы развиваемся — это вы, наши пользователи.'
             },
         ],
-        newsInGlavnzya: [
+        newsInGlavnaya: [
             {
                 title: 'Строительство',
                 number: 'Час назад',
@@ -39,8 +39,8 @@ export default {
         cardsInAlice(state) {
             return state.cardsInAlice
         },
-        newsInGlavnzya(state) {
-            return state.newsInGlavnzya
+        newsInGlavnaya(state) {
+            return state.newsInGlavnaya
         }
     },
     mutations: {},

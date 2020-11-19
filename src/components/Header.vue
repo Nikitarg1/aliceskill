@@ -1,13 +1,14 @@
 <template>
   <div>
     <v-navigation-drawer
+        app
         right
         fixed
         style="z-index: 7;left: auto;"
         v-model="drawer"
         disable-resize-watcher
         width="225"
-        :color="this.$vuetify.theme.dark ? backgroundDark : background"
+        :color="this.$vuetify.theme.dark ? darkBackgroundColor : lightBackgroundColor"
     >
       <template v-slot:prepend>
         <v-list-item></v-list-item>
@@ -59,11 +60,13 @@
     </transition>
 
     <v-app-bar
+        app
         fixed
         elevate-on-scroll
-        :color="this.$vuetify.theme.dark ? backgroundDark : background">
+        :color="this.$vuetify.theme.dark ? darkBackgroundColor : lightBackgroundColor"
+    >
       <router-link to="/">
-        <v-toolbar-title class="logo ml-16 logoBlack--text">Rubble</v-toolbar-title>
+        <v-toolbar-title class="logo ml-md-16 ml-2 logoBlack--text">Rubble</v-toolbar-title>
       </router-link>
 
       <v-spacer></v-spacer>
@@ -94,7 +97,8 @@
 
     </v-app-bar>
 
-    <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat></v-app-bar>
+    <v-app-bar fixed style="backdrop-filter: blur(10px); background-color: transparent; z-index: 4" flat
+               app></v-app-bar>
 
     <div class="d-block d-sm-none" style="width: 25px; height: 100%; position: fixed; z-index: 3; right: 0;"
          v-touch="{left: () => this.drawer = true}"
@@ -107,10 +111,12 @@
 <script>
 
 export default {
-  props: ['color', 'isLoading', 'valueProgress'],
+  props: ['isLoading', 'valueProgress'],
   name: "testHeader",
   data: () => ({
     drawer: false,
+    darkBackgroundColor: 'rgba(64,180,173, 1)',
+    lightBackgroundColor: 'rgba(80, 225, 216, 1)',
     liItems: [
       {link: '', name: 'Главная', icon: 'mdi-home', class: 'navItemTwo animated slideInRight'},
       {link: 'houses', name: 'Мой дом', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight'},
@@ -123,38 +129,33 @@ export default {
       }
     ]
   }),
-  computed: {
-    background: function () {
-      switch (this.color) {
-        case 'brightBlue':
-          return 'rgba(80, 225, 216, .7)'
-        case 'brightGreen':
-          return 'rgba(171, 224, 94, .7)'
-        default:
-          return 'rgba(171, 224, 94, .7)'
-      }
-    },
-    backgroundDark: function () {
-      switch (this.color) {
-        case 'brightBlue':
-          return 'rgba(64,180,173, .7)'
-        case 'brightGreen':
-          return 'rgba(171,224,94, .7)'
-        default:
-          return 'rgba(171, 224, 94, .7)'
-      }
-    },
-  },
   mounted() {
     const theme = localStorage.getItem("isDark");
     if (theme) {
       this.$vuetify.theme.dark = theme === "true";
     }
+    window.addEventListener("scroll", this.onScroll);
   },
   methods: {
     setTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
       localStorage.setItem("isDark", this.$vuetify.theme.dark.toString());
+    },
+    onScroll(e) {
+      this.number = e.target.documentElement.scrollTop;
+      this.handleScroll(this.number);
+    },
+    handleScroll(number1) {
+      if (number1 >= 64)
+        if (this.$vuetify.theme.dark)
+          this.darkBackgroundColor = 'rgba(64,180,173, .7)'
+        else
+          this.lightBackgroundColor = 'rgba(80, 225, 216, .7)'
+
+      else if (this.$vuetify.theme.dark)
+        this.darkBackgroundColor = 'rgba(64,180,173, 1)'
+      else
+        this.lightBackgroundColor = 'rgba(80, 225, 216, 1)'
     }
   }
 }
