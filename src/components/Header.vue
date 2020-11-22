@@ -65,24 +65,31 @@
         elevate-on-scroll
         :color="this.$vuetify.theme.dark ? darkBackgroundColor : lightBackgroundColor"
     >
-      <router-link to="/">
-        <v-toolbar-title class="logo ml-md-16 ml-2 logoBlack--text">Rubble</v-toolbar-title>
-      </router-link>
+      <v-container>
+        <v-row>
+          <v-col cols="5" class="pa-0">
+            <router-link to="/">
+              <v-toolbar-title class="logo logoBlack--text">Rubble</v-toolbar-title>
+            </router-link>
+          </v-col>
 
-      <v-spacer></v-spacer>
+          <v-col cols="7" class="d-flex align-center justify-end pa-0">
+            <ul class="navigation d-none d-sm-flex pl-0">
+              <li v-for="item in liItems"
+                  :key="item.name">
+                <a :href="'/' + item.link" class="logoBlack--text" :style="item.style">{{ item.name }}</a>
+              </li>
+            </ul>
 
-      <ul class="navigation d-none d-sm-flex md:pr-18">
-        <li v-for="item in liItems"
-            :key="item.name">
-          <a :href="'/' + item.link" class="logoBlack--text" :style="item.style">{{ item.name }}</a>
-        </li>
-      </ul>
+            <v-btn icon @click="setTheme">
+              <v-icon>{{ this.$vuetify.theme.dark ? 'mdi-brightness-5' : 'mdi-brightness-4' }}</v-icon>
+            </v-btn>
 
-      <v-btn icon @click="setTheme">
-        <v-icon>{{ this.$vuetify.theme.dark ? 'mdi-brightness-5' : 'mdi-brightness-4' }}</v-icon>
-      </v-btn>
+            <v-app-bar-nav-icon class="d-block d-sm-none" @click.stop="drawer = true"></v-app-bar-nav-icon>
+          </v-col>
+        </v-row>
+      </v-container>
 
-      <v-app-bar-nav-icon class="d-block d-sm-none" @click.stop="drawer = true"></v-app-bar-nav-icon>
 
       <v-progress-linear
           :active="isLoading"

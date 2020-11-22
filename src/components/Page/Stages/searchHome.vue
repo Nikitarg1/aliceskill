@@ -24,7 +24,7 @@
               outlined
               hide-details
               label="Поиск"
-              color="saturatedGreen"
+              color="brightBlue"
           ></v-text-field>
         </v-col>
         <v-col
@@ -37,7 +37,7 @@
               hide-details
               :items="keysRus"
               label="Фильтр"
-              color="saturatedGreen"
+              color="brightBlue"
           ></v-select>
         </v-col>
         <v-col
@@ -53,7 +53,7 @@
                 depressed
                 block
                 :value="false"
-                color="saturatedGreen"
+                color="brightBlue"
             >
               <v-icon>mdi-arrow-up</v-icon>
             </v-btn>
@@ -62,7 +62,7 @@
                 block
                 depressed
                 :value="true"
-                color="saturatedGreen"
+                color="brightBlue"
             >
               <v-icon>mdi-arrow-down</v-icon>
             </v-btn>
@@ -123,7 +123,7 @@
             <v-btn
                 dark
                 text
-                color="saturatedGreen"
+                color="brightBlue"
                 class="ml-2"
                 v-bind="attrs"
                 v-on="on"
@@ -153,7 +153,7 @@
           </span>
         <v-btn
             fab
-            color="saturatedGreen"
+            color="brightBlue"
             class="mr-1"
             @click="formerPage"
         >
@@ -161,7 +161,7 @@
         </v-btn>
         <v-btn
             fab
-            color="saturatedGreen"
+            color="brightBlue"
             class="ml-1"
             @click="nextPage"
         >

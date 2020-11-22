@@ -46,4 +46,9 @@ export default {
 .v-application {
   color: #4a5568;
 }
+@media (min-width: 1904px) {
+  .container {
+    max-width: 1280px;
+  }
+}
 </style>

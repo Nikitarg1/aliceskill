@@ -7,16 +7,16 @@
         :gradient="this.$vuetify.theme.dark ? 'to bottom, rgba(0,0,0,.2), rgba(0,0,0,.2)' : 'to bottom, rgba(0,0,0,0), rgba(0,0,0,.01)'"
         position="100% 47%"
     />
-    <div class="container" style="padding-top: 64px; max-width: 1280px;">
-      <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-16 logoBlack--text">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 font-medium leading-tight">Мы стираем
+    <v-container class="pa-0">
+      <div class="col-lg-6 col-md-8 col-sm-9 pt-16 logoBlack--text pa-0 text-center text-sm-left">
+        <h1 class="text-5xl sm:text-7xl md:text-7xl lg:text-7xl mb-6 font-medium leading-tight">Мы стираем
           границы!</h1>
-        <p class="text-lg" style="font-size: 1.125rem">
+        <p class="text-lg" style="font-size: 1.225rem; text-shadow: 0 0 0 gray">
           Узнавайте всю актуальную информацию о стройке вашей квартиры самым удобным способом с помощью Rubble и
           Яндекс Алисы.
         </p>
       </div>
-    </div>
+    </v-container>
   </div>
 </template>
 
@@ -41,7 +41,7 @@ export default {
 
 @media screen and (max-width: 599px) {
   .widthMobile {
-    min-height: 70vh
+    min-height: 65vh
   }
 }
 </style>
