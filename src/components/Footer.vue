@@ -25,7 +25,7 @@
       </v-card-text>
 
       <v-card-text class="pt-0">
-        Сделано с любовью командой Rubble для всероссийского конкурса <a href="https://rukamifest.com/">Rukami</a>.
+        Сделано с любовью командой Rubble из школы №49 для всероссийского конкурса по информатике.
       </v-card-text>
 
       <v-divider></v-divider>

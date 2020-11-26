@@ -7,11 +7,11 @@
              height="60vh"
              gradient="to bottom, rgba(0,0,0,.2), rgba(0,0,0,.2)"
       >
-        <div class="container" style="padding-top: 64px; max-width: 1280px;">
-          <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-16">
-            <h1 class="mb-6 text-h3 font-weight-bold">Найди свой дом!</h1>
-            <p class="" style="font-size: 1.225rem">
-              Пользуйся удобными фильтрами чтобы найти свой дом
+        <div class="container">
+          <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-5">
+            <h1 class="mb-4 text-h2 font-weight-bold">Найдите свой дом</h1>
+            <p class="text-h6 font-weight-light" style="font-size: 1.225rem">
+              Пользуйтесь удобными фильтрами чтобы найти свой дом прямо сейчас!
             </p>
           </div>
         </div>
@@ -20,12 +20,10 @@
     <div class="container">
       <searchHome/>
     </div>
-    <Footer/>
   </div>
 </template>
 
 <script>
-import Footer from "@/components/Footer"
 import searchHome from "@/components/Page/Stages/searchHome"
 import {jarallax} from 'jarallax';
 import 'jarallax/dist/jarallax.css'
@@ -33,7 +31,6 @@ import 'jarallax/dist/jarallax.css'
 export default {
   name: "Stages",
   components: {
-    Footer,
     searchHome
   },
   data: () => ({}),

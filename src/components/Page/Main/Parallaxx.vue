@@ -8,10 +8,10 @@
         position="100% 47%"
     />
     <v-container class="pa-0">
-      <div class="col-lg-6 col-md-8 col-sm-9 pt-16 logoBlack--text pa-0 text-center text-sm-left">
-        <h1 class="text-5xl sm:text-7xl md:text-7xl lg:text-7xl mb-6 font-medium leading-tight">Мы стираем
+      <div class="col-lg-6 col-md-8 col-sm-9 pt-16 logoBlack--text pr-4 text-center text-sm-left">
+        <h1 class="text-sm-h1 text-h3 font-weight-medium mb-6 font-medium leading-tight">Мы стираем
           границы!</h1>
-        <p class="text-lg" style="font-size: 1.225rem; text-shadow: 0 0 0 gray">
+        <p style="font-size: 1.225rem; text-shadow: 0 0 0 gray">
           Узнавайте всю актуальную информацию о стройке вашей квартиры самым удобным способом с помощью Rubble и
           Яндекс Алисы.
         </p>

@@ -67,17 +67,16 @@
     >
       <v-container>
         <v-row>
-          <v-col cols="5" class="pa-0">
+          <v-col cols="5" class="pa-sm-3 pa-0">
             <router-link to="/">
               <v-toolbar-title class="logo logoBlack--text">Rubble</v-toolbar-title>
             </router-link>
           </v-col>
-
           <v-col cols="7" class="d-flex align-center justify-end pa-0">
-            <ul class="navigation d-none d-sm-flex pl-0">
+            <ul class="navigation d-none d-sm-flex pl-0 listStyleType">
               <li v-for="item in liItems"
                   :key="item.name">
-                <a :href="'/' + item.link" class="logoBlack--text" :style="item.style">{{ item.name }}</a>
+                <a :href="'/' + item.link" class="logoBlack--text text--primary" :style="item.style">{{ item.name }}</a>
               </li>
             </ul>
 
@@ -181,13 +180,16 @@ export default {
 
 .logo {
   letter-spacing: 1px;
-  font-size: 2em;
-  text-decoration: none;
+  font-size: 2.1em;
   font-weight: 600;
 }
 
 .navigation li a {
   margin-right: 40px;
+}
+
+.listStyleType {
+  list-style: none;
 }
 
 .navItemOne {

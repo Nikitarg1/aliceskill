@@ -1,19 +1,22 @@
 <template>
   <v-app>
     <Header :isLoading="isLoading" :valueProgress="valueProgress"></Header>
-    <v-main app>
-      <router-view v-if="!isLoading"></router-view>
+    <v-main app v-if="!isLoading">
+      <router-view></router-view>
     </v-main>
+    <Footer v-if="!isLoading"/>
   </v-app>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Footer
   },
   data: () => ({
     isLoading: false,
@@ -31,12 +34,12 @@ export default {
       clearInterval(this.interval)
 
       this.interval = setInterval(() => {
-        this.valueProgress += 25
-      }, 300)
+        this.valueProgress += 33
+      }, 200)
 
       setTimeout(() => {
         this.isLoading = false
-      }, 1500);
+      }, 600);
     }
   }
 }
@@ -46,6 +49,11 @@ export default {
 .v-application {
   color: #4a5568;
 }
+
+.v-application a {
+  text-decoration: none;
+}
+
 @media (min-width: 1904px) {
   .container {
     max-width: 1280px;
