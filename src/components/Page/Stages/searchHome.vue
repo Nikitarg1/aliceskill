@@ -24,7 +24,7 @@
               outlined
               hide-details
               label="Поиск"
-              color="brightBlue"
+              color="textBrightBlue"
           ></v-text-field>
         </v-col>
         <v-col
@@ -37,7 +37,7 @@
               hide-details
               :items="keysRus"
               label="Фильтр"
-              color="brightBlue"
+              color="textBrightBlue"
           ></v-select>
         </v-col>
         <v-col
@@ -53,7 +53,7 @@
                 depressed
                 block
                 :value="false"
-                color="brightBlue"
+                color="textBrightBlue"
             >
               <v-icon>mdi-arrow-up</v-icon>
             </v-btn>
@@ -62,7 +62,7 @@
                 block
                 depressed
                 :value="true"
-                color="brightBlue"
+                color="textBrightBlue"
             >
               <v-icon>mdi-arrow-down</v-icon>
             </v-btn>
@@ -94,13 +94,13 @@
               </v-img>
 
               <v-card-subtitle class="pb-0">
-              {{ item.address }}
-            </v-card-subtitle>
+                {{ item.address }}
+              </v-card-subtitle>
 
-              <v-card-text class="text--primary ">
+              <v-card-text class="text--primary">
                 <div v-for="(key, index) in filteredKeys"
                      :key="index">
-                  <div :class="{ 'saturatedGreen--text': sortBy === key }">
+                  <div :class="{ 'textBrightBlue--text': sortBy === key }">
                     {{ item[key.toLowerCase()] }}
                   </div>
                 </div>
@@ -117,51 +117,53 @@
           align="center"
           justify="center"
       >
-        <span class="grey--text">Количество домов</span>
-        <v-menu offset-y>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn
-                dark
-                text
-                color="brightBlue"
-                class="ml-2"
-                v-bind="attrs"
-                v-on="on"
-            >
-              {{ itemsPerPage }}
-              <v-icon>mdi-chevron-down</v-icon>
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item
-                v-for="(number, index) in itemsPerPageArray"
-                :key="index"
-                @click="updateItemsPerPage(number)"
-            >
-              <v-list-item-title>{{ number }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
+        <!--        <span class="grey&#45;&#45;text"></span>-->
 
-        <v-spacer></v-spacer>
+        <!--        <v-menu offset-y>-->
+        <!--          <template v-slot:activator="{ on, attrs }">-->
+        <!--            <v-btn-->
+        <!--                dark-->
+        <!--                text-->
+        <!--                color="brightBlue"-->
+        <!--                class="ml-2"-->
+        <!--                v-bind="attrs"-->
+        <!--                v-on="on"-->
+        <!--            >-->
+        <!--              {{ itemsPerPage }}-->
+        <!--              <v-icon>mdi-chevron-down</v-icon>-->
+        <!--            </v-btn>-->
+        <!--          </template>-->
+        <!--          <v-list>-->
+        <!--            <v-list-item-->
+        <!--                v-for="(number, index) in itemsPerPageArray"-->
+        <!--                :key="index"-->
+        <!--                @click="updateItemsPerPage(number)"-->
+        <!--            >-->
+        <!--              <v-list-item-title>{{ number }}</v-list-item-title>-->
+        <!--            </v-list-item>-->
+        <!--          </v-list>-->
+        <!--        </v-menu>-->
 
-        <span
-            class="mr-4
-            grey--text"
-        >
-            Страница {{ page }} из {{ numberOfPages }}
-          </span>
         <v-btn
             fab
-            color="brightBlue"
+            small
+            color="textBrightBlue"
             class="mr-1"
             @click="formerPage"
         >
           <v-icon>mdi-chevron-left</v-icon>
         </v-btn>
+        <span
+            class="mx-4
+            grey--text"
+        >
+          {{ page }} из {{ numberOfPages }}
+          </span>
+
         <v-btn
             fab
-            color="brightBlue"
+            small
+            color="textBrightBlue"
             class="ml-1"
             @click="nextPage"
         >

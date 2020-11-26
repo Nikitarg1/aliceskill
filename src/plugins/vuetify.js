@@ -9,12 +9,14 @@ const opts = {
             light: {
                 brightBlue: '#85eae4',
                 saturatedBlue: '#60a8a3',
-                logoBlack: '#4a5568'
+                logoBlack: '#4a5568',
+                textBrightBlue: '#00afab'
             },
             dark: {
                 brightBlue: '#85eae4',
                 saturatedBlue: '#8ae2dc',
-                logoBlack: '#ffffff'
+                logoBlack: '#ffffff',
+                textBrightBlue: '#00afab'
             },
         },
     },

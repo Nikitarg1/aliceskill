@@ -9,12 +9,12 @@
   },
   "dependencies": {
     "@mdi/font": "^5.8.55",
-    "core-js": "^3.7.0",
+    "core-js": "^3.8.0",
     "jarallax": "^1.12.4",
     "vue": "^2.6.11",
     "vue-router": "^3.4.9",
-    "vuetify": "^2.3.18",
-    "vuex": "^3.4.0"
+    "vuetify": "^2.3.19",
+    "vuex": "^3.6.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.9",
@@ -27,7 +27,6 @@
     "eslint-plugin-vue": "^6.2.2",
     "sass": "^1.29.0",
     "sass-loader": "^8.0.0",
-    "vue-cli-plugin-tailwind": "^1.5.0",
     "vue-cli-plugin-vuetify": "^2.0.7",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.3.0"
