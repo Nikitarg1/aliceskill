@@ -7,7 +7,9 @@ import Stages from "@/store/modules/Stages";
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    loader: false
+  },
   getters: {},
   mutations: {},
   actions: {},

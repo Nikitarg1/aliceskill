@@ -9,8 +9,8 @@
       >
         <div class="container">
           <div class="col-lg-6 col-md-8 col-sm-8 pl-md-16 pl-sm-5 pt-5">
-            <h1 class="mb-4 text-h2 font-weight-bold">Найдите свой дом</h1>
-            <p class="text-h6 font-weight-light" style="font-size: 1.225rem">
+            <h1 class="mb-4 text-h2" style="font-weight: 700">Найдите свой дом</h1>
+            <p class="text-h6" style="font-size: 1.225rem;">
               Пользуйтесь удобными фильтрами чтобы найти свой дом прямо сейчас!
             </p>
           </div>

@@ -15,7 +15,7 @@
         <transition name="slideLeftItem" enter-active-class="animated slideInRight navItemOne"
                     leave-active-class="animated slideOutLeft">
           <v-list-item class="mb-2" v-show="drawer">
-            <h1 class="text-3xl font-weight-bold logoBlack--text">Меню</h1>
+            <h1 class="text-3xl montserrat-weight-bold logoBlack--text">Меню</h1>
           </v-list-item>
         </transition>
       </template>
@@ -69,7 +69,7 @@
         <v-row>
           <v-col cols="5" class="pa-sm-3 pa-0">
             <router-link to="/">
-              <v-toolbar-title class="logo logoBlack--text">Rubble</v-toolbar-title>
+              <v-toolbar-title class="logo logoBlack--text montserrat-weight-bold">Rubble</v-toolbar-title>
             </router-link>
           </v-col>
           <v-col cols="7" class="d-flex align-center justify-end pa-0">
@@ -131,6 +131,7 @@ export default {
         name: 'Покупатели',
         icon: 'mdi-account-multiple',
         class: 'navItemFive animated slideInRight',
+        disabled: 'true',
         style: 'margin-right: 16px;'
       }
     ]
@@ -181,7 +182,11 @@ export default {
 .logo {
   letter-spacing: 1px;
   font-size: 2.1em;
-  font-weight: 600;
+}
+
+.disabledItem {
+  pointer-events: none;
+  cursor: default;
 }
 
 .navigation li a {

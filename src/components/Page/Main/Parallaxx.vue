@@ -9,9 +9,9 @@
     />
     <v-container class="pa-0">
       <div class="col-lg-6 col-md-8 col-sm-9 pt-16 logoBlack--text pr-4 text-center text-sm-left">
-        <h1 class="text-sm-h1 text-h3 font-weight-medium mb-6 font-medium leading-tight">Мы стираем
+        <h1 class="text-sm-h1 text-h3 mb-6" style="font-weight: 600">Мы стираем
           границы!</h1>
-        <p style="font-size: 1.225rem; text-shadow: 0 0 0 gray">
+        <p style="font-size: 1.225rem; font-weight: 500">
           Узнавайте всю актуальную информацию о стройке вашей квартиры самым удобным способом с помощью Rubble и
           Яндекс Алисы.
         </p>

@@ -10,7 +10,7 @@ const opts = {
                 brightBlue: '#85eae4',
                 saturatedBlue: '#60a8a3',
                 logoBlack: '#4a5568',
-                textBrightBlue: '#00afab'
+                textBrightBlue: '#50E1D8'
             },
             dark: {
                 brightBlue: '#85eae4',
