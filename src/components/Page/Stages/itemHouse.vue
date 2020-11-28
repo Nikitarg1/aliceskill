@@ -1,7 +1,7 @@
 <template>
   <div v-if="item">
 
-    <div class="container mb-5">
+    <div class="container mb-8">
       <v-img dark
              :src="item.img"
              class="align-end justify-center rounded"
@@ -13,14 +13,14 @@
             <!--            <p class="mb-0 text-h5">Жилой комплекс</p>-->
             <p class="font-weight-bold mb-1 text-sm-h3 text-h4">{{ item.name }}</p>
             <p class="montserrat-weight-thin mb-2 text-lg-h6" style="letter-spacing: .05em">
-              Уникальный проект бизнес-класса<!--            TODO: сделать столбец для краткого содержания-->
+              {{ item.miniInfo }}
             </p>
           </div>
         </div>
       </v-img>
     </div>
 
-    <v-container class="mb-5">
+    <v-container class="mb-8">
       <h1 class="mx-sm-5 textBrightBlue--text text-h5 text-sm-h4 font-weight-bold">Выбрать квартиру</h1>
       <v-row class="mx-sm-5"
              justify="center"
@@ -44,15 +44,15 @@
                   <p>Квратиры</p>
                 </v-col>
                 <v-col cols="6" class="font-weight-bold">
-                  <p>Бизнес</p>
-                  <p>51.2 — 72.6 м²</p>
-                  <p>Сдан</p>
-                  <p>2 985 000 руб.</p>
+                  <p>{{ item.class }}</p>
+                  <p>{{ item.footage }} м²</p>
+                  <p>{{ item.deadlines }}</p>
+                  <p>{{ item.price }}</p>
                 </v-col>
               </v-row>
             </v-card-text>
             <v-btn
-                :loading="loaderFun"
+                :loading="context.$store.state.loader"
                 ripple
                 block
                 dark
@@ -65,14 +65,14 @@
         <v-col cols="12" sm="6">
           <v-skeleton-loader
               type="image"
-              :loading="loaderFun">
+              :loading="context.$store.state.loader">
             <v-img :src="item.img" class="rounded"/>
           </v-skeleton-loader>
         </v-col>
       </v-row>
     </v-container>
 
-    <v-container class="mb-5">
+    <v-container class="mb-8">
       <h1 class="mx-sm-5 textBrightBlue--text text-h5 text-sm-h4 font-weight-bold mb-2">О проекте</h1>
       <v-card
           flat
@@ -81,9 +81,7 @@
         <v-row align="center" justify="center">
           <v-col cols="12" sm="11" class="pa-sm-0 pa-4">
             <p class="body-1 text-justify">
-              ЖК «ЗИЛАРТ» – уникальный проект бизнес-класса, строящийся в Даниловском районе Москвы. Это первый жилой
-              комплекс, предлагающий жителям широчайший набор нестандартных опций, от просторного парка до собственного
-              музея.
+              {{ item.info }}
             </p>
           </v-col>
         </v-row>
@@ -91,9 +89,10 @@
       </v-card>
     </v-container>
 
-    <!--    <v-container class="mb-5">-->
-    <!--      <h1 class="mx-sm-5 textBrightBlue&#45;&#45;text text-h5 text-sm-h4 font-weight-bold mb-2">Детали проекта</h1>-->
-    <!--    </v-container>-->
+    <v-container class="mb-8">
+      <h1 class="mx-sm-5 textBrightBlue--text text-h5 text-sm-h4 font-weight-bold mb-2">Детали проекта</h1>
+      <item-swiper :item="item"/>
+    </v-container>
 
   </div>
 
@@ -102,20 +101,25 @@
 
 <script>
 import Error from "@/components/Error";
+import ItemSwiper from "@/components/Page/Stages/itemSwiper";
 
 export default {
   name: "itemHouse",
+  data: () => ({
+    context: null
+  }),
   components: {
+    ItemSwiper,
     Error
   },
   computed: {
     item() {
       return this.$store.getters.taskByName(this.$route.params.name)
     },
-    loaderFun() {
-      return this.$store.state.loader
-    },
   },
+  mounted() {
+    this.context = this
+  }
 }
 </script>
 

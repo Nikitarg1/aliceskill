@@ -70,7 +70,7 @@
 
           <v-skeleton-loader
               type="image, article"
-              :loading="loaderFun">
+              :loading="context.$store.state.loader">
 
             <v-card
                 min-width="150"
@@ -118,7 +118,7 @@
               max-width="400"
               max-height="350"
               type="image, article"
-              :loading="loaderFun">
+              :loading="context.$store.state.loader">
 
             <v-card
                 min-width="150"
@@ -165,10 +165,11 @@ import {mapGetters} from "vuex"
 export default {
   name: "Glavnaya",
   components: {
-    Parallaxx,
-
+    Parallaxx
   },
-  data: () => ({}),
+  data: () => ({
+    context: null
+  }),
   computed: {
     ...mapGetters([
       'newsInGlavnaya',
@@ -177,6 +178,9 @@ export default {
     loaderFun() {
       return this.$store.state.loader
     },
+  },
+  mounted() {
+    this.context = this
   },
 }
 </script>
