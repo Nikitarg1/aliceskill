@@ -10,7 +10,6 @@
       >
         <div class="container pl-sm-10">
           <div class="col-sm-6 col-12">
-            <!--            <p class="mb-0 text-h5">Жилой комплекс</p>-->
             <p class="font-weight-bold mb-1 text-sm-h3 text-h4">{{ item.name }}</p>
             <p class="montserrat-weight-thin mb-2 text-lg-h6" style="letter-spacing: .05em">
               {{ item.miniInfo }}
@@ -41,7 +40,7 @@
                   <p>Класс</p>
                   <p>Метраж</p>
                   <p>Скроки сдачи</p>
-                  <p>Квратиры</p>
+                  <p>Квартиры</p>
                 </v-col>
                 <v-col cols="6" class="font-weight-bold">
                   <p>{{ item.class }}</p>
@@ -52,7 +51,7 @@
               </v-row>
             </v-card-text>
             <v-btn
-                :loading="context.$store.state.loader"
+                :loading="loader"
                 ripple
                 block
                 dark
@@ -65,7 +64,7 @@
         <v-col cols="12" sm="6">
           <v-skeleton-loader
               type="image"
-              :loading="context.$store.state.loader">
+              :loading="loader">
             <v-img :src="item.img" class="rounded"/>
           </v-skeleton-loader>
         </v-col>
@@ -106,7 +105,6 @@ import ItemSwiper from "@/components/Page/Stages/itemSwiper";
 export default {
   name: "itemHouse",
   data: () => ({
-    context: null
   }),
   components: {
     ItemSwiper,
@@ -116,9 +114,9 @@ export default {
     item() {
       return this.$store.getters.taskByName(this.$route.params.name)
     },
-  },
-  mounted() {
-    this.context = this
+    loader() {
+      return this.$store.state.loader
+    }
   }
 }
 </script>

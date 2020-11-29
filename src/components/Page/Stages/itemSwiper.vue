@@ -13,15 +13,15 @@
           rounded
           class="ma-3"
           height="400"
-          max-width="300"
+          width="370"
           @click="toggle"
           elevation="5"
       >
         <v-skeleton-loader
-            width="300"
+            width="370"
             height="400"
             type="image, article"
-            :loading="context.$store.state.loader">
+            :loading="loader">
           <v-img
               :src="item.img"
               class="rounded"
@@ -41,15 +41,16 @@
 <script>
 
 export default {
-  props: ['item'],
+  props: ['item', 'context'],
   name: "itemSwiper",
   data: () => ({
     model: null,
-    context: null
   }),
-  mounted() {
-    this.context = this
-  },
+  computed: {
+    loader() {
+      return this.$store.state.loader
+    }
+  }
 }
 
 </script>

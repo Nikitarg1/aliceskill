@@ -30,8 +30,9 @@
         также в будущем даже управлять своим аккаунтом.
       </p>
       <v-skeleton-loader
-          type="image"
-          :loading="loaderFun">
+          type="image, image"
+          :loading="loader"
+      >
         <v-img src="../../../assets/img/glavnaya/colonra.png"
                alt="Alice mock"
                class="my-14 wow fadeInUp"
@@ -70,7 +71,8 @@
 
           <v-skeleton-loader
               type="image, article"
-              :loading="context.$store.state.loader">
+              :loading="loader"
+          >
 
             <v-card
                 min-width="150"
@@ -118,7 +120,7 @@
               max-width="400"
               max-height="350"
               type="image, article"
-              :loading="context.$store.state.loader">
+              :loading="loader">
 
             <v-card
                 min-width="150"
@@ -168,19 +170,15 @@ export default {
     Parallaxx
   },
   data: () => ({
-    context: null
   }),
   computed: {
     ...mapGetters([
       'newsInGlavnaya',
       'cardsInAlice',
     ]),
-    loaderFun() {
+    loader() {
       return this.$store.state.loader
     },
-  },
-  mounted() {
-    this.context = this
-  },
+  }
 }
 </script>

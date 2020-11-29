@@ -23,6 +23,11 @@ const routes = [
     path: '/buyers',
     name: 'buyers',
     component: () => import('../components/Page/Buyers/buyers')
+  },
+  {
+    path: '*',
+    name: 'error',
+    component: () => import('../components/Error')
   }
 ]
 

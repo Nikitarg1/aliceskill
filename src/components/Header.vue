@@ -163,7 +163,7 @@ export default {
         this.darkBackgroundColor = 'rgba(64,180,173, 1)'
       else
         this.lightBackgroundColor = 'rgba(80, 225, 216, 1)'
-    }
+    },
   }
 }
 </script>

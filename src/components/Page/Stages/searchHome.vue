@@ -88,7 +88,7 @@
                   max-width="400"
                   max-height="350"
                   type="image, article"
-                  :loading="context.$store.state.loader">
+                  :loading="loader">
 
                 <v-img
                     class="white--text align-end"
@@ -129,7 +129,6 @@
 export default {
   name: "searchHome",
   data: () => ({
-    context: null,
     itemsPerPageArray: [6, 9, 12],
     search: '',
     filter: {},
@@ -149,6 +148,9 @@ export default {
     ]
   }),
   computed: {
+    loader() {
+      return this.$store.state.loader
+    },
     searchItem() {
       return this.$store.getters.searchItem
     },
@@ -169,10 +171,7 @@ export default {
     updateItemsPerPage(number) {
       this.itemsPerPage = number
     },
-  },
-  mounted() {
-    this.context = this
-  },
+  }
 }
 </script>
 

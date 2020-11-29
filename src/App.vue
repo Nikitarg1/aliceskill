@@ -4,7 +4,7 @@
     <v-main app>
       <router-view></router-view>
     </v-main>
-    <Footer/>
+    <Footer v-if="this.$route.name !== 'Main' && this.$route.name !== 'error' && this.$route.name !== 'itemHouse'"/>
   </v-app>
 </template>
 
@@ -29,14 +29,16 @@ export default {
   },
   methods: {
     fetchData() {
-      this.isLoading = true
       this.$store.state.loader = true
-      this.valueProgress = 0
-      clearInterval(this.interval)
+      if (this.$route.name !== 'Main' && this.$route.name !== 'error') {
+        this.isLoading = true
+        this.valueProgress = 0
+        clearInterval(this.interval)
 
-      this.interval = setInterval(() => {
-        this.valueProgress += 10
-      }, 200)
+        this.interval = setInterval(() => {
+          this.valueProgress += 10
+        }, 200)
+      }
 
       setTimeout(() => {
         this.isLoading = false
