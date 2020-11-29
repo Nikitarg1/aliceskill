@@ -63,7 +63,7 @@
         </v-col>
         <v-col cols="12" sm="6">
           <v-skeleton-loader
-              type="image"
+              type="image, image"
               :loading="loader">
             <v-img :src="item.img" class="rounded"/>
           </v-skeleton-loader>
