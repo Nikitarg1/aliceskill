@@ -128,7 +128,7 @@ export default {
       {link: 'houses', name: 'Мой дом', icon: 'mdi-book-multiple', class: 'navItemTree animated slideInRight'},
       {
         link: 'buyers',
-        name: 'Покупатели',
+        name: 'Покупателю',
         icon: 'mdi-account-multiple',
         class: 'navItemFive animated slideInRight',
         disabled: 'true',
