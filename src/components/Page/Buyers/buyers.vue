@@ -1,5 +1,5 @@
 <template>
-
+<div>
   <v-container>
     <v-text-field
         label="Prepend inner"
@@ -25,8 +25,8 @@
           вопросами
           ниже, чтобы найти ответ, который вы ищете. </p>
       </v-col>
-
     </v-row>
+
     <v-skeleton-loader
         :loading="loader"
         type="image,image"
@@ -60,21 +60,78 @@
     </v-skeleton-loader>
   </v-container>
 
+  <modal v-if="dialogVisible" @close="dialogVisible = false" :dialogData="dialogData" :dialogVisible="dialogVisible"/>
 
+  <v-container>
+    <v-row>
+      <v-col
+          v-for="card in newsInGlavnaya"
+          :key="card.title"
+          cols="12"
+          md="6"
+
+      >
+        <v-card
+            min-width="150"
+            class="wow fadeInUp"
+            elevation="5"
+        >
+          <v-img
+              :src="card.src"
+              class="white--text align-end"
+              height="350px"
+              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.4)"
+          >
+            <v-card-title v-text="card.title" class="text-h5 font-weight-medium"></v-card-title>
+          </v-img>
+          <v-card-subtitle class="pb-0" v-text="card.number"></v-card-subtitle>
+          <v-card-text class="body-1 text--primary" v-text="card.text"></v-card-text>
+
+          <v-card-actions>
+            <v-btn
+                color="saturatedBlue"
+                @click.stop="openDialog(card)"
+                text
+            >
+              Читать
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+</div>
 </template>
 
 <script>
 
+import modal from "@/components/Page/Buyers/modal";
+
 export default {
   name: "buyers",
-  components: {},
+  data: () => ({
+    dialogVisible: false,
+    dialogData: null
+  }),
+  components: {
+    modal,
+  },
   computed: {
     loader() {
       return this.$store.state.loader
     },
     setFAQ() {
       return this.$store.getters.getFAQ
+    },
+    newsInGlavnaya() {
+      return this.$store.getters.newsInGlavnaya
     }
+  },
+  methods: {
+    openDialog(card) {
+      this.dialogData = card
+      this.dialogVisible = true
+    },
   }
 }
 </script>
