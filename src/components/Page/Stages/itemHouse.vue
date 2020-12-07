@@ -57,7 +57,7 @@
                 dark
                 color="textBrightBlue"
                 class="text-capitalize text-h6 font-weight-medium">
-              Забронировать
+              Написать застройщику
             </v-btn>
           </v-card>
         </v-col>

@@ -51,7 +51,7 @@
 
     <modal v-if="dialogVisible" @close="dialogVisible = false" :dialogData="dialogData" :dialogVisible="dialogVisible"/>
 
-    <v-container>
+    <v-container id="news">
       <v-row>
         <v-col
             v-for="card in newsInGlavnaya"

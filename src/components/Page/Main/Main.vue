@@ -30,12 +30,12 @@
         также в будущем даже управлять своим аккаунтом.
       </p>
       <v-skeleton-loader
-          type="image, image"
+          type="image, image,image"
           :loading="loader"
       >
         <v-img src="../../../assets/img/glavnaya/colonra.png"
                alt="Alice mock"
-               class="my-14 wow fadeInUp"
+               class="my-14"
                :gradient="this.$vuetify.theme.dark ? 'to bottom, rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,.3),  rgba(0,0,0,.5)' : 'to bottom, rgba(0,0,0,0), rgba(0,0,0,.01)'"
                data-wow-offset="100"
         >
@@ -76,7 +76,6 @@
 
             <v-card
                 min-width="150"
-                class="wow fadeInUp"
                 hover
             >
               <v-img
@@ -95,15 +94,10 @@
               <v-card-actions>
                 <v-btn
                     color="saturatedBlue"
-                    icon
-                >
-                  <v-icon>mdi-share-variant</v-icon>
-                </v-btn>
-                <v-btn
-                    color="saturatedBlue"
                     text
+                    @click="$router.push({ path: '/buyers#news' })"
                 >
-                  Читать
+                  Продолжить
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -117,14 +111,12 @@
 
         >
           <v-skeleton-loader
-              max-width="400"
               max-height="350"
               type="image, article"
               :loading="loader">
 
             <v-card
                 min-width="150"
-                class="wow fadeInUp"
                 hover
             >
               <v-img
@@ -141,15 +133,10 @@
               <v-card-actions>
                 <v-btn
                     color="saturatedBlue"
-                    icon
-                >
-                  <v-icon>mdi-share-variant</v-icon>
-                </v-btn>
-                <v-btn
-                    color="saturatedBlue"
                     text
+                    @click="$router.push({ path: '/buyers#news' })"
                 >
-                  Читать
+                  Продолжить
                 </v-btn>
               </v-card-actions>
             </v-card>
@@ -170,6 +157,7 @@ export default {
     Parallaxx
   },
   data: () => ({
+    idNews: "#news"
   }),
   computed: {
     ...mapGetters([

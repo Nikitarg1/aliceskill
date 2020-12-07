@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app v-cloak>
     <Header :isLoading="isLoading" :valueProgress="valueProgress"></Header>
     <v-main app>
       <router-view></router-view>
@@ -50,6 +50,8 @@ export default {
 </script>
 
 <style>
+
+
 .montserrat-weight-thin {
   font-weight: 100 !important;
 }

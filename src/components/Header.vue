@@ -68,9 +68,10 @@
       <v-container>
         <v-row>
           <v-col cols="5" class="pa-sm-3 pa-0 animated navItemTwo"
-                 :class="[animatedLogo ? 'slideInLeft' : 'slideOutLeft ']">
+                 :class="[animatedLogo ? 'slideInLeft' : 'slideOutLeft']">
             <router-link to="/">
-              <v-toolbar-title class="logo logoBlack--text montserrat-weight-bold">Rubble</v-toolbar-title>
+              <v-toolbar-title class="logo logoBlack--text montserrat-weight-bold" v-show="updateLogo" v-cloak>Rubble
+              </v-toolbar-title>
             </router-link>
           </v-col>
           <v-col cols="7" class="d-flex align-center justify-end pa-0">
@@ -123,6 +124,7 @@ export default {
   data: () => ({
     drawer: false,
     animatedLogo: false,
+    updateLogo: false,
     darkBackgroundColor: 'rgba(64,180,173, 1)',
     lightBackgroundColor: 'rgba(80, 225, 216, 1)',
     liItems: [
@@ -158,10 +160,10 @@ export default {
       if (number1 >= 64)
         if (this.$vuetify.theme.dark) {
           this.darkBackgroundColor = 'rgba(64,180,173, .7)'
-          this.animatedLogo = true
+          this.animatedLogo = this.updateLogo = true
         } else {
           this.lightBackgroundColor = 'rgba(80, 225, 216, .7)'
-          this.animatedLogo = true
+          this.animatedLogo = this.updateLogo = true
         }
 
       else if (this.$vuetify.theme.dark) {
@@ -172,11 +174,18 @@ export default {
         this.animatedLogo = false
       }
     },
+  },
+  destroyed() {
+    this.updateLogo = false
   }
 }
 </script>
 
 <style scoped>
+[v-cloak] {
+  display: none;
+}
+
 .navBlur {
   position: fixed;
   top: 0;
