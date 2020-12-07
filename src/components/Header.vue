@@ -67,7 +67,8 @@
     >
       <v-container>
         <v-row>
-          <v-col cols="5" class="pa-sm-3 pa-0">
+          <v-col cols="5" class="pa-sm-3 pa-0 animated navItemTwo"
+                 :class="[animatedLogo ? 'slideInLeft' : 'slideOutLeft ']">
             <router-link to="/">
               <v-toolbar-title class="logo logoBlack--text montserrat-weight-bold">Rubble</v-toolbar-title>
             </router-link>
@@ -121,6 +122,7 @@ export default {
   name: "testHeader",
   data: () => ({
     drawer: false,
+    animatedLogo: false,
     darkBackgroundColor: 'rgba(64,180,173, 1)',
     lightBackgroundColor: 'rgba(80, 225, 216, 1)',
     liItems: [
@@ -154,15 +156,21 @@ export default {
     },
     handleScroll(number1) {
       if (number1 >= 64)
-        if (this.$vuetify.theme.dark)
+        if (this.$vuetify.theme.dark) {
           this.darkBackgroundColor = 'rgba(64,180,173, .7)'
-        else
+          this.animatedLogo = true
+        } else {
           this.lightBackgroundColor = 'rgba(80, 225, 216, .7)'
+          this.animatedLogo = true
+        }
 
-      else if (this.$vuetify.theme.dark)
+      else if (this.$vuetify.theme.dark) {
         this.darkBackgroundColor = 'rgba(64,180,173, 1)'
-      else
+        this.animatedLogo = false
+      } else {
         this.lightBackgroundColor = 'rgba(80, 225, 216, 1)'
+        this.animatedLogo = false
+      }
     },
   }
 }
