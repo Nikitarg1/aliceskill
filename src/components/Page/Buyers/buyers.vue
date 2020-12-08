@@ -67,6 +67,7 @@
             <v-card
                 min-width="150"
                 elevation="5"
+                min-height="400"
             >
               <v-img
                   :src="card.src"

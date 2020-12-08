@@ -56,6 +56,8 @@
                 block
                 dark
                 color="textBrightBlue"
+                :href="item.contact"
+                target="_blank"
                 class="text-capitalize text-h6 font-weight-medium">
               Написать застройщику
             </v-btn>
