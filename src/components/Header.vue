@@ -141,10 +141,15 @@ export default {
     ]
   }),
   mounted() {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    darkModeMediaQuery.addListener((e) => {
+      this.$vuetify.theme.dark = e.matches;
+      localStorage.setItem("isDark", this.$vuetify.theme.dark.toString());
+    });
+
     const theme = localStorage.getItem("isDark");
-    if (theme) {
+    if (theme)
       this.$vuetify.theme.dark = theme === "true";
-    }
     window.addEventListener("scroll", this.onScroll);
   },
   methods: {
@@ -182,6 +187,11 @@ export default {
 </script>
 
 <style scoped>
+
+@media (prefers-color-scheme: light) {
+
+}
+
 [v-cloak] {
   display: none;
 }
