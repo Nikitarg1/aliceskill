@@ -51,7 +51,6 @@ export default {
 
 <style>
 
-
 .montserrat-weight-thin {
   font-weight: 100 !important;
 }
@@ -96,6 +95,9 @@ export default {
   text-decoration: none;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
 @media (min-width: 1904px) {
   .container {
     max-width: 1280px;

@@ -14,7 +14,6 @@
       </p>
     </v-container>
 
-
     <v-container class="py-16 text-center">
       <h3 class="text-h4 font-weight-medium mb-4 wow fadeInUp">Алиса
         <span>

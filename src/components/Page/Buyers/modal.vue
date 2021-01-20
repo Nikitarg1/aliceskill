@@ -1,13 +1,11 @@
-<template>
+<template id="CustomScrollbar">
   <v-row justify="center">
     <v-dialog
         v-model="dialogVisible"
         @click:outside="$emit('close')"
         max-width="700"
     >
-
       <v-card flat>
-
         <v-img
             :src="dialogData.src"
             class="white--text align-stretch"
@@ -20,12 +18,13 @@
             </v-btn>
           </div>
         </v-img>
-        <v-card-title v-text="dialogData.title" class="text-h5 font-weight-bold px-3"></v-card-title>
-        <v-card-subtitle class="pb-3 pt-1 px-3" v-text="dialogData.number"></v-card-subtitle>
-        <v-card-text class="body-1 px-3" v-text="dialogData.text"></v-card-text>
-        <v-card-text class="body-1 px-3" v-text="dialogData.longText"></v-card-text>
+        <div class="pa-2">
+          <v-card-title v-text="dialogData.title" class="text-h5 font-weight-bold px-3"></v-card-title>
+          <v-card-subtitle class="pb-3 pt-1 px-3" v-text="dialogData.number"></v-card-subtitle>
+          <v-card-text class="body-1 px-3" v-text="dialogData.text"></v-card-text>
+          <v-card-text class="body-1 px-3" v-text="dialogData.longText"></v-card-text>
+        </div>
       </v-card>
-
     </v-dialog>
   </v-row>
 </template>
@@ -38,6 +37,5 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
 </style>

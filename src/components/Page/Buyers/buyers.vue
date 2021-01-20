@@ -49,7 +49,8 @@
       </v-skeleton-loader>
     </v-container>
 
-    <modal v-if="dialogVisible" @close="dialogVisible = false" :dialogData="dialogData" :dialogVisible="dialogVisible"/>
+    <modal id="CustomScrollbar" v-if="dialogVisible" @close="dialogVisible = false" :dialogData="dialogData"
+           :dialogVisible="dialogVisible"/>
 
     <v-container id="news">
       <v-row>
@@ -167,6 +168,5 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
 </style>
