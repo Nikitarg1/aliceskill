@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="context">
     <v-container>
       <v-text-field
           label="Prepend inner"
@@ -7,10 +7,14 @@
           full-width
           solo
           clearable
+          @input="inputChange"
           placeholder="Поиск"
           color="textBrightBlue"
           hint="Какой вопрос вас интерисует?"
+          :error="error.error"
+          :error-messages="error.massage"
       ></v-text-field>
+
 
       <v-row
           align="center"
@@ -20,7 +24,7 @@
                md="9"
                class="text-center mt-md-10">
 
-          <h1 class="mb-2 display-2 font-weight-bold fadeInUp wow">Популярные вопросы</h1>
+          <h1 class="mb-2 display-2 font-weight-bold fadeInUp wow" id="searchtext">Популярные вопросы</h1>
           <p class="body-1 fadeInUp wow">Есть вопрос? Нет проблем, бывает. Ознакомьтесь с нашими часто задаваемыми
             вопросами
             ниже, чтобы найти ответ, который вы ищете. </p>
@@ -139,12 +143,18 @@
 
 import modal from "@/components/Page/Buyers/modal";
 import {mapGetters} from "vuex";
+import Mark from "mark.js"
 
 export default {
   name: "buyers",
   data: () => ({
     dialogVisible: false,
-    dialogData: null
+    dialogData: null,
+    mark: null,
+    error: {
+      error: false,
+      massage: ''
+    }
   }),
   components: {
     modal,
@@ -159,7 +169,36 @@ export default {
       return this.$store.state.loader
     },
   },
+
+  mounted() {
+    let context = document.querySelector(".context")
+    this.mark = new Mark(context)
+  },
+
   methods: {
+    inputChange(text) {
+      if (text === null || text === "") {
+        this.mark.unmark()
+        this.error.error = false
+        this.error.massage = ''
+        return;
+      }
+
+      let context = this
+      this.mark.unmark({
+        done: function () {
+          context.error.error = false
+          context.error.massage = ''
+          context.mark.mark(text, {
+            noMatch: function () {
+              context.error.error = true
+              context.error.massage = "Результатов не найдено"
+            }
+          })
+        }
+      })
+    },
+
     openDialog(card) {
       this.dialogData = card
       this.dialogVisible = true
@@ -169,4 +208,8 @@ export default {
 </script>
 
 <style>
+mark {
+  background: #50E1D8;
+  color: black;
+}
 </style>
