@@ -56,14 +56,7 @@ export default {
       else return this.item.slider.length <= 3 ? 394 : 370
     }
   },
-  methods: {
-    //   widthItem() {
-    //     if (this.$vuetify.breakpoint.mobile)
-    //       return this.width += 250
-    //     else return this.width += this.item.slider.length <= 3 ? '400' : '370'
-    //   }
-    // }
-  }
+  methods: {}
 }
 
 </script>

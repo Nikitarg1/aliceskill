@@ -35,6 +35,7 @@ const router = new VueRouter({
     routes,
     mode: 'history', // убирает /#/ ванчале ссылки
     scrollBehavior(to, from, savedPosition) {
+        console.log(savedPosition)
         if (savedPosition) {
             return {
                 savedPosition,
@@ -44,10 +45,13 @@ const router = new VueRouter({
             const position = {}
 
             if (to.hash) {
-                position.selector = to.hash
 
                 if (to.hash === '#news') {
-                    position.offset = {y: 150}
+
+                    return {
+                        selector: to.hash,
+                        offset: {x: 0, y: 50}
+                    }
                 }
 
                 if (/^#\d/.test(to.hash) || document.querySelector(to.hash)) {
@@ -59,6 +63,8 @@ const router = new VueRouter({
 
                 return false
             }
+
+            return {x: 0, y: 0}
         }
     }
 })
