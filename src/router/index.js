@@ -35,7 +35,6 @@ const router = new VueRouter({
     routes,
     mode: 'history', // убирает /#/ ванчале ссылки
     scrollBehavior(to, from, savedPosition) {
-        console.log(savedPosition)
         if (savedPosition) {
             return {
                 savedPosition,
